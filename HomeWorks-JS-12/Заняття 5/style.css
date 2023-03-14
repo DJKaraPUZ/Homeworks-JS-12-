@@ -1,0 +1,255 @@
+html{
+    --header-height: 105px;
+    --footer-height: 45px;
+    --all-border: 2px;
+    --card-color-light: rgb(199,183,183);
+    --card-color-dark: rgb(104,81,116);
+}
+/*HEADER PART*/
+.header{    
+    height: var(--header-height);
+    min-width: calc((900px + (2 *30px)) + (2 * (210px + (2 * 5px))));
+    /*Мінімальна ширина хедера і футера привязана до ширини трьох основних блоків і їх падінгів.
+    Якби це не домашка на раз - зробив би через змінні. ЧЕСНО!*/
+    background-color: rgb(211, 183, 20);
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.div-logo{
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+nav a{    
+    text-decoration: none;
+    color: black;
+    margin-right: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.main-logo{
+    margin-left: 25px;
+    height: 60px;
+}
+/*MAIN CONTENT PART*/
+.main-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container-old{/*Для завдання першого рівня, де футер пустого сайту має бути прибитий до низу*/
+    display: flex;
+    justify-content: space-between;
+    height: calc(100dvh - (var(--header-height) + var(--footer-height)));
+}
+
+.main{
+    width: 100%;
+    max-width: 1170px;
+    min-width: 900px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 30px 30px 0px 30px; 
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: black;
+    margin: 20px;
+}
+
+.offer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.offer{
+    width: 280px;
+    height: 350px;
+    border: var(--all-border) black solid;
+    border-radius: 15px;
+    margin: 0px 5px 20px 5px;
+    text-align: center;
+    padding: 3px;
+}
+
+.offer:hover{
+    width: 280px;
+    height: 350px;
+    border: var(--all-border) rgb(211, 183, 20) solid;
+    background-color: rgb(214, 212, 204);
+    border-radius: 15px;
+    margin: 0px 5px 20px 5px;
+    text-align: center;
+    padding: 3px;
+}
+
+.picture-frame{
+    display: inline-block;
+    width: 93px;
+    height: 93px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid var(--card-color-light) 12px;
+    margin: 10px;
+}
+
+.cadr-mane{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 5px;
+}
+
+.card-text{
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 5px;
+    overflow: hidden;
+    height: 114px;
+}
+
+.button-go{
+    display: inline-block;
+    background-color: var(--card-color-dark);
+    color: white;
+    text-decoration: none;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 5px 20px 0px 20px;
+}
+
+.button-go:hover{
+    display: inline-block;
+    background-color: var(--card-color-light);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 5px;
+    border: 2px solid black;
+}
+
+.aside{
+    min-width: 210px;
+    max-width: 210px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 5px;
+}
+
+.left-aside{    
+    background-color: rgb(199, 152, 185);
+    order: -1;
+}
+
+.right-aside{    
+    background-color: rgb(156, 177, 199);
+}
+
+/*Для індекс сторінки*/
+.homework-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-around;
+    height: 350px;
+    background-color: black;
+    color: red;
+    border: var(--all-border) yellow solid;
+    border-radius: 15px;
+    margin: 0px 5px 20px 5px;
+    padding: 3px;
+}
+
+.picture-frame-homework{
+    display: inline-block;
+    width: 500px;
+    height: 250px;
+    border-radius: 10px;
+    border: solid yellow 2px;
+    margin: 2px;
+}
+/*Для індекс сторінки всьо*/
+
+/*Для завдання level 3*/
+.holder{
+    display: flex;    
+    border: black 7px solid;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    height: 230px;
+    max-height: 230px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.item{    
+    height: calc(50% - 30px);
+    font-size: 45px;
+    font-weight: bold;
+    flex-grow: 2;
+    flex-shrink: 2;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.holder div:first-child{
+    background-color: rgb(245, 103, 71);
+    flex-basis: 50%;
+}
+
+.holder div:nth-child(2){
+    background-color: rgb(78, 130, 182);
+    order: 5;
+    flex-basis: 33%;
+}
+
+.holder div:nth-child(3){
+    background-color: rgb(98, 54, 157);
+    order: 2;
+    flex-basis: 33%;
+}
+
+.holder div:nth-child(4){
+    background-color: rgb(43, 127, 0);
+    order: 10;
+    flex-basis: 33%;
+}
+
+.holder div:nth-child(5){
+    background-color: rgb(248, 166, 0);
+    flex-basis: 50%;
+}
+/*Для завдання level 3 всьо*/
+
+/*FOOTER CONTENT PART*/
+footer{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: var(--footer-height);   
+    background-color: rgb(134, 236, 134);
+    font-size: 18px;
+    font-weight: bold;
+    min-width: calc((900px + (2 *30px)) + (2 * (210px + (2 * 5px))));
+    /*Мінімальна ширина хедера і футера привязана до ширини трьох основних блоків і їх падінгів.
+    Якби це не домашка на раз - зробив би через змінні. ЧЕСНО!*/
+}
