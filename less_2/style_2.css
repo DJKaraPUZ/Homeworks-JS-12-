@@ -1,0 +1,17 @@
+/*Стилі для другого рівня*/
+
+a[href ^="https"]{    
+    color: #f00;
+}
+
+li>ul>li>a[title="youtube"]{
+    color: #ff8d00;     
+}
+
+ul + p{
+    font-size: 26px;
+}
+
+a[title]{
+  border: 1px solid #067b09;  
+}

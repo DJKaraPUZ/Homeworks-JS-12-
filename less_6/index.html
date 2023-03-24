@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">        
+    <title>ДЗ №6 Рудзевич М </title>
+    <link rel="icon" href="image/done.png">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head> 
+
+<body>
+    <div>
+        <form action="#" method="#">
+            <fieldset>
+                <legend>Контактна інформація</legend>
+                <div class="form-div">
+                    <label for="name">Ім'я <em>*</em></label><input type="text" id="name">
+                </div>
+                <div class="form-div">
+                    <label for="email">E-mail</label><input type="email" id="email">
+                </div>
+                <div class="form-div">
+                    <label for="tel">Телефон</label><input type="tel" id="tel">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Другий рівень</legend>
+                <div class="form-div">
+                    <label for="country">Оберіть країну</label>
+                    <select id="country">
+                        <option value="1">Зімбабве</option>
+                        <option value="2">Буркіна-Фасо</option>
+                        <option value="3" selected>Україна</option>
+                        <option value="4">Ватикан</option>
+                    </select>
+                </div>
+                <div class="form-div">
+                    <label for="coment">Коментар</label>
+                </div>
+                <div class="form-div">
+                    <textarea id="coment"></textarea>
+                </div>               
+            </fieldset>
+            <fieldset>
+                <legend>Третій рівень</legend>
+                <div class="form-div-custom">                    
+                    <input class="custom-checkbox" type="checkbox" id="options-1" checked>
+                    <label class="label-for-custom-checkbox" for="options-1">Опція 1</label>
+                </div>
+                <div class="form-div-custom">
+                    <input class="custom-checkbox" type="checkbox" id="options-2">
+                    <label class="label-for-custom-checkbox" for="options-2">Опція 2</label>                    
+                </div>
+                <div class="form-div-custom">
+                    <input class="custom-checkbox" type="checkbox" id="options-3">
+                    <label class="label-for-custom-checkbox" for="options-3">Опція 3</label>                    
+                </div>                                
+            </fieldset>
+            <button type="submit">Відправити</button>
+        </form>
+          
+    </div>
+
+</body>
+</html>
