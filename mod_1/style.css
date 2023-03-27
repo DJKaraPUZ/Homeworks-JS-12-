@@ -4,18 +4,22 @@ html{
     --main-background-color: #302C42; /*Основний колір тла на сайті*/
 }
 
-.swiper {    
+.center-div .swiper {
+    transform: translate(0px);
+    
+}
+
+.swiper {
     position: relative;
     background-color: var(--main-background-color);
     height: 511px;
-    width: 316px;
+    width: 370px;
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     display: none;
 }
-
 
 button {  /*Щоб не псував кнопку на формі*/
     border: none;
@@ -437,9 +441,18 @@ h2{
     
     .short-textblock .arrow-right-special{
         position: absolute;
-        left: 335px;
+        left: 260px;
         top: 58px;
         display: block;
+    }
+
+    .text-in-short-textblock{
+        width: 575px;
+        font-size: 14px;
+    }
+
+    .short-textblock .h2-fat, .short-textblock .h2-thin{
+        font-size: 26px;
     }
 }
 
@@ -450,7 +463,7 @@ h2{
 
     .short-textblock .arrow-right{
         position: absolute;
-        left: 280px;
+        left: 205px;
         top: 60px;
         display: block;
     }
@@ -465,6 +478,34 @@ h2{
         display: none;
     }
 }
+
+@media (max-width: 949px) {
+    .short-textblock{
+        margin-left: 23px;
+        margin-right: 15px;
+    }
+
+    .text-in-short-textblock{        
+        width: 481px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 767px) {
+    .short-textblock{
+        justify-content: center;
+    }
+
+    .short-textblock .h2-fat, .short-textblock .h2-thin{
+        font-size: 26px;
+        line-height: 32px;
+    }
+
+    .text-in-short-textblock{
+        display: none;
+    }
+}
+
 
 /*Кінець блоку заголовку і короткого тексту*/
 
@@ -515,7 +556,6 @@ h2{
 
 /*Початок блоку для карток*/
 .card-container{ /*Контейнер для карток блоку СЕРВІСИ*/
-    border: yellow 1px solid;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -607,9 +647,12 @@ h2{
     }
 
     .swiper {
-        display: flex;
-        
-      }
+        display: flex;        
+    }
+
+    .center-div .swiper-slide .cards{
+        margin-left: 25px;
+    }
 }
 
 /*@media (max-width: 1310px) {
@@ -689,7 +732,7 @@ h2{
     border-radius: 50%;
 }
 /*Адаптив mask-group*/
-@media (max-width: 768px){
+@media (max-width: 767px){
     
     .mask-group{
         height: 163.35px;
@@ -722,7 +765,7 @@ h2{
 .swiper-button-prev{
     position: absolute;
     top: 250px;
-    left: 10px;
+    left: 2px;
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -730,6 +773,7 @@ h2{
     width: 62px;
     border-radius: 50%;
     background: rgba(14, 14, 14, 0.32);
+    z-index: 500;
 }
 
 /*------------------------------------------------*/
@@ -756,7 +800,7 @@ h2{
     position: absolute;
     z-index: 15;
     top: 250px;
-    left: 250px;
+    left: 300px;
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -784,14 +828,85 @@ h2{
     display: flex;
     justify-content: space-between;
     margin-bottom: 70px;
+    
 }
 
-.tech-section-container :first-child{
+.tech-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 24%;
+}
+
+/*.tech-section-container :first-child{
     margin-left: 10%;
 }
 
 .tech-section-container :last-child{
     margin-right: 7%;
+}*/
+
+.tech-section-swiper{
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .tech-section-container{            
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 550px;
+        margin-bottom: 0px;
+    }
+
+    .tech-item{
+        flex-basis: 45%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .tech-section-container :first-child{
+        margin-left: 0;
+    }
+    
+    .tech-section-container :last-child{
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .tech-section-container{
+        display: none;
+    }
+
+    .tech-section-swiper{
+        display: block;
+    }
+
+    .swiper-slide .tech-item img[alt="Unreal Engine"]{
+        margin-top: 53px;
+    }
+
+    .swiper-slide .tech-item img{
+        width: 250px;
+        
+    }
+
+    .swiper-slide .tech-item{
+        display: flex;
+        justify-content: center;
+        vertical-align: middle;
+        align-items: center;
+    }
+
+    .tech-section-swiper .swiper-button-next{
+        top: 120px;
+        left: 298px;
+    }
+
+    .tech-section-swiper .swiper-button-prev{
+        top: 120px;
+        left: 0px;
+    }
 }
 
 /*Кінець блоку tech-section*/
@@ -952,7 +1067,7 @@ fieldset{
         width: 90vw;        
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .form-container{
         margin: 0 27px 80px 20px;
     }
@@ -1109,7 +1224,6 @@ fieldset{
 }
 
 
-
 /*Блок футера і його меню*/
 .footer{ /* Конейнер для ФУТЕРа */
     /*border: 1px burlywood solid;*/
@@ -1141,7 +1255,7 @@ fieldset{
     min-width: 220px;
     width: 280px;
 }
-/*ПРИДУМАЙ НОРМАЛЬНУ НАЗВУ КЛАСУ*/
+
 .social-menu{  /* Додаткові стилі для контейнера з соціальними мережами*/
     /*border: red 1px solid; ПРИБЕРИ*/
     justify-content: space-between;
@@ -1180,15 +1294,6 @@ fieldset{
         margin: 0 1% 0 1%;
     }
     
-    /*.footer-menu{ 
-        font-weight: 700;
-        font-size: 14px;
-    }
-    
-    .copyright-block-text{        
-        font-size: 12px;
-    }*/
-    
     .social-bar{
         width: 230px;
     }
@@ -1198,7 +1303,7 @@ fieldset{
     }    
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .footer{
         flex-direction: column;
         justify-content: start;
@@ -1261,7 +1366,4 @@ fieldset{
         margin-bottom: 90px;
     }
 }
-
-
-
 /*Кінець блоку футера і його меню*/
