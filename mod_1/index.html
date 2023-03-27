@@ -9,7 +9,8 @@
     <title>HYDRA site</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" 
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
@@ -371,6 +372,69 @@
             lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.
         </div>
     </div>
+
+    <div class="swiper" id="circles-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="circles">
+                    <div class="circles-out">
+                        <div class="circles-in">
+                            <span class="circles-in-text">01</span>
+                        </div>
+                    </div>
+                    <div class="text-and-arrow-under-circles">                        
+                        <h3>3D Conception <br> & Design</h3>
+                    </div>
+                </div>
+            </div>            
+            <div class="swiper-slide">
+                <div class="circles">
+                    <div class="circles-out">
+                        <div class="circles-in">
+                            <span class="circles-in-text">02</span>
+                        </div>
+                    </div>
+                    <div class="text-and-arrow-under-circles">                        
+                        <h3>Interaction <br> Design</h3>
+                    </div>
+                </div>
+            </div>         
+            <div class="swiper-slide">
+                <div class="circles">
+                    <div class="circles-out">
+                        <div class="circles-in">
+                            <span class="circles-in-text">03</span>
+                        </div>
+                    </div>
+                    <div class="text-and-arrow-under-circles">                        
+                        <h3>VR World <br> User Testing</h3>
+                    </div>
+                </div>        
+            </div>
+            <div class="swiper-slide">
+                <div class="circles">
+                    <div class="circles-out">
+                        <div class="circles-in">
+                            <span class="circles-in-text">04</span>
+                        </div>
+                    </div>
+                    <div class="text-and-arrow-under-circles">                        
+                        <h3>Hydra VR<br>Deploy</h3>
+                    </div>
+                </div>
+            </div>            
+        </div>      
+        <div class="swiper-button-prev">            
+            <div class="navig-circles-in">
+                    <img src="img/navig_left.svg" alt="decoration">
+            </div>
+        </div>
+        <div class="swiper-button-next">            
+            <div class="navig-circles-in">
+                <img src="img/navig_right.svg" alt="decoration">
+            </div>
+        </div>
+    </div>
     <div class="circles-container">
         <div class="circles">
             <div class="circles-out">
@@ -506,7 +570,6 @@
             <span class="copyright-block-text">ALL RIGHTS RESERVED</span>
         </div>
     </div>
-
     <script>
         const swiper = new Swiper('.swiper', {
             navigation: {
@@ -514,8 +577,6 @@
                 prevEl: '.swiper-button-prev',
             },
             });
-    </script>
-
-    
+    </script>    
 </body>
 </html>

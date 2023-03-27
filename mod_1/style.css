@@ -25,16 +25,6 @@ button {  /*Щоб не псував кнопку на формі*/
     border: none;
 }
 
-@media (max-width: 991px) {
-    
-}
-
-/*img {
-    width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-}*/
-
 a{
     text-decoration: none;
 }
@@ -126,8 +116,6 @@ li:hover{
 .contact-menu-button:hover{    
     border-radius: 40px;
     border: 2px solid yellow;
-    margin-right: 38px;
-    margin-left: 100px;
 }
 
 .contact-menu-button:hover p{        
@@ -244,7 +232,6 @@ h1{
 
 /*Початок блоку з контактною інформацією*/
 .contact-container{
-    /*border: yellow 1px solid;*/
     display: flex;
     justify-content: space-between;
     align-items: center;  
@@ -654,41 +641,6 @@ h2{
         margin-left: 25px;
     }
 }
-
-/*@media (max-width: 1310px) {
-    .card-container{    
-        min-width: 100%;    
-        margin: 0 0 0 0;
-    }
-        
-    .cards{ /*Основа / заготовка картки для блоку...*/      /*/          
-        width: 20dvw;;        
-    }
-
-    .card-picture-frame{ /*Рамка для картинки на картці*//*
-        width: 17dvw;
-        height: 17dvw;
-        border: solid rgba(14, 14, 14, 0.32) 10px;
-    }
-    
-    .tryit-button{ /*Кнопка TRY IT на картці*/           /*
-        width: 70%;        
-    }
-    
-}
-
-@media (max-width: 820px) {
-    .card-name{        
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 29px;        
-    }
-
-    
-
-}*/
-
-
 /*Кінець блоку для карток*/
 
 /*Для блоку mask-group*/
@@ -765,7 +717,7 @@ h2{
 .swiper-button-prev{
     position: absolute;
     top: 250px;
-    left: 2px;
+    left: 0px;
     display: flex;
     justify-content: center;
     align-items: center;    
@@ -1155,7 +1107,7 @@ fieldset{
     display: flex;
     justify-content: center;
     margin-top: 124px;
-    margin-bottom: 112px;    
+    margin-bottom: 112px;
 }
 
 .circles{
@@ -1199,23 +1151,85 @@ fieldset{
     margin-right: 15.5px;
 }
 
-/*.text-under-circles{
-    width: 187px;
-    height: 64px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    color: var(--main-text-color-white);
-}*/
-
 .text-and-arrow-under-circles{
     margin-top: 25px;
-    display: flex;
+    display: flex;    
 }
+
+.circles .text-and-arrow-under-circles h3{
+    white-space: nowrap;
+}
+
+#circles-swiper{
+    display: none;
+}
+
+@media (max-width: 1300px) {
+    .circles{
+        align-items: center;
+        margin: 0px 2vw;
+    }
+}
+
+@media (max-width: 1100px) {
+    .circles-container{
+        background-image: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 124px;
+        margin-bottom: 112px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .circles{
+        display: flex;
+        flex-direction: column;
+        width: 49%;
+        align-items: center;
+        margin: 0 0;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 767px) {
+    .circles{
+        display: block;
+        margin: 0 0;
+    }
+
+    .circles-container{
+        display: none;
+    }
+
+    #circles-swiper{
+        display: block;
+        width: 315px;
+        height: 340px;
+        margin-bottom: 30px;
+    }
+
+    #circles-swiper .swiper-button-next{
+        left: 253px;
+    }
+
+    #circles-swiper .circles .text-and-arrow-under-circles{
+        width: 198px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #circles-swiper .circles{
+        margin: 0 0 0 60px ;
+    }
+}
+
 /*Кінець блоку для кругів з номерами*/
 
+/*Блок футера і його меню*/
 .form-footer{ /*пільний контейнер для дуже красивих хвилястих ліній*/
     background-image: url(img/footer_wave_line_top.svg), 
         url(img/footer_wave_line_bottom.svg);
@@ -1223,10 +1237,7 @@ fieldset{
     background-repeat: no-repeat, no-repeat;
 }
 
-
-/*Блок футера і його меню*/
 .footer{ /* Конейнер для ФУТЕРа */
-    /*border: 1px burlywood solid;*/
     display: flex;
     justify-content: space-between;
     margin: 0 6% 0 5%;
@@ -1257,11 +1268,9 @@ fieldset{
 }
 
 .social-menu{  /* Додаткові стилі для контейнера з соціальними мережами*/
-    /*border: red 1px solid; ПРИБЕРИ*/
     justify-content: space-between;
 }
 
-    /*Блок декоративної горизонстальної лінії на всю ширину*/
 .long-horizon-line-block{
     display: flex;
     justify-content: center;
@@ -1272,7 +1281,7 @@ fieldset{
 .long-horizon-line{
     max-width: 100%;
 }
-    /*Кінець блоку декоративної горизонстальної лінії на всю ширину*/
+
 .copyright-block{
     display: flex;
     justify-content: center;
