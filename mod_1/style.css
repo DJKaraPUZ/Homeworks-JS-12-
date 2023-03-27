@@ -4,6 +4,19 @@ html{
     --main-background-color: #302C42; /*Основний колір тла на сайті*/
 }
 
+.swiper {    
+    position: relative;
+    background-color: var(--main-background-color);
+    height: 511px;
+    width: 316px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: none;
+}
+
+
 button {  /*Щоб не псував кнопку на формі*/
     border: none;
 }
@@ -588,23 +601,34 @@ h2{
     background: linear-gradient(270deg, #8176AF 0%, #C0B7E8 100%);
 }
 
-@media (max-width: 1310px) {
+@media (max-width: 1300px) {
+    .card-container{
+        display: none;
+    }
+
+    .swiper {
+        display: flex;
+        
+      }
+}
+
+/*@media (max-width: 1310px) {
     .card-container{    
         min-width: 100%;    
         margin: 0 0 0 0;
     }
         
-    .cards{ /*Основа / заготовка картки для блоку...*/                
-        width: 23%;        
+    .cards{ /*Основа / заготовка картки для блоку...*/      /*/          
+        width: 20dvw;;        
     }
 
-    .card-picture-frame{ /*Рамка для картинки на картці*/
+    .card-picture-frame{ /*Рамка для картинки на картці*//*
         width: 17dvw;
         height: 17dvw;
         border: solid rgba(14, 14, 14, 0.32) 10px;
     }
     
-    .tryit-button{ /*Кнопка TRY IT на картці*/           
+    .tryit-button{ /*Кнопка TRY IT на картці*/           /*
         width: 70%;        
     }
     
@@ -619,7 +643,7 @@ h2{
 
     
 
-}
+}*/
 
 
 /*Кінець блоку для карток*/
@@ -632,8 +656,9 @@ h2{
     justify-content: center;
     align-items: center;
     height: 303px;
-    width: 89%;
-    max-width: 1285px;
+    width: 89%;  
+    min-width: 348px;
+    max-width: 1278px;
     border-radius: 160px;
     margin: 115px 6% 50px 5%;
     background-image: url(img/pexels-rodnae-productions-8097332\_1.jpg);
@@ -663,7 +688,99 @@ h2{
     width: 70px;
     border-radius: 50%;
 }
+
+@media (max-width: 768px){
+    
+    .mask-group{
+        height: 163.35px;
+        width: 348px;
+        border-radius: 60px;
+        margin: 56px 6.4% 0px 4.3%;
+        background-size: covers;
+    }
+    
+    .small-circles-out{
+        display: none;
+    }
+
+    .mask-group .h2-fat{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .mask-group .h2-thin{
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+
+
+
+
 /*Кінець блоку mask-group*/
+
+/*Навігаційні кнопки для сладера в мобільному*/
+.swiper-button-prev{
+    position: absolute;
+    top: 250px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 62px;
+    width: 62px;
+    border-radius: 50%;
+    background: rgba(14, 14, 14, 0.32);
+}
+
+/*------------------------------------------------*/
+.swiper-button-next{
+    left:var(--swiper-navigation-sides-offset,10px);
+    right:auto
+}
+.swiper-button-prev:after,.swiper-rtl .swiper-button-next:after{
+    content:''
+}
+.swiper-button-next,.swiper-rtl .swiper-button-prev{
+    right:var(--swiper-navigation-sides-offset,10px);
+    left:auto
+}
+.swiper-button-next:after,.swiper-rtl .swiper-button-prev:after{
+    content:''
+}
+.swiper-button-lock{
+    display:none
+}
+/*------------------------------------------------*/
+
+.swiper-button-next{    
+    position: absolute;
+    z-index: 15;
+    top: 250px;
+    left: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 62px;
+    width: 62px;
+    border-radius: 50%;
+    background: rgba(14, 14, 14, 0.32);
+}
+
+.navig-circles-in{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background: linear-gradient(251.27deg,
+        #C0B7E8 12.87%, #8176AF 89.33%);
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+}
+/*КІНЕЦЬ навігаційних кнопок для сладера в мобільному*/
 
 /*Для блоку tech-section*/
 
