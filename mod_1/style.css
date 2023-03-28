@@ -96,6 +96,60 @@ li:hover{
     margin-left: 100px;
 }
 
+/*Блок для Лого і напису*/
+.logo-block{
+    display: flex;
+}
+
+.logo-block img{
+    margin-right: 3.3px;
+}
+
+.logo-block :first-child{
+    margin-right: 15px;
+    margin-left: 5.8%;
+}
+/*Кінець блоку для Лого і напису*/
+
+.header-cover{/*Треба, щоб хвилясті лінії були на 3-ох різних блоках*/
+    display: flex;    
+    flex-direction: column;
+    background-image: url(img/Hero_section_Vector\ 1.svg),
+        url(img/Hero_section_Vector\ 2.svg),
+        url(img/Hero_section_Vector\ 3.svg),
+        url(img/Hero_section_Vector\ 4.svg);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: right 170px, top right 150px, right bottom 250px, left;
+}
+
+.wide-button{ /*звичайна кнопка на сайті - їх більшість*/
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 214px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
+}
+
+.wide-button:hover{    
+    background: linear-gradient(270deg, #8176AF 0%, #C0B7E8 100%);
+}
+
+.wide-button-text { /*Написи на кнопках*/
+    text-align: center;
+    width: 133px;
+    height: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: var(--main-buttons-text-color);
+}
+
 @media (max-width: 1350px) {
     .contact-menu-button{
         margin-left: 0px;
@@ -110,6 +164,25 @@ li:hover{
 @media (max-width: 1100px) {
     header{        
         margin: 0 1% 100px 1%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    header{        
+        margin-bottom: 50px;
+        padding-top: 0;
+    }
+
+    .logo-block :first-child{
+        height: 60px;
+        margin: 25.6px 11px 0 20px;
+    }
+
+    .logo-block img[alt="HYDRA logo char"]{
+        height: 28px;
+        margin-top: 52px;
+        margin-right: 2px;
     }
 }
 
@@ -153,45 +226,6 @@ h1{
     /*text-fill-color: transparent;*/
 }
 
-.header-cover{/*Треба, щоб хвилясті лінії були на 3-ох різних блоках*/
-    display: flex;    
-    flex-direction: column;
-    background-image: url(img/Hero_section_Vector\ 1.svg),
-        url(img/Hero_section_Vector\ 2.svg),
-        url(img/Hero_section_Vector\ 3.svg),
-        url(img/Hero_section_Vector\ 4.svg);
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position: right 170px, top right 150px, right bottom 250px, left;
-}
-
-.wide-button{ /*звичайна кнопка на сайті - їх більшість*/
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    height: 48px;
-    width: 214px;
-    border-radius: 40px;
-    background: linear-gradient(90deg, #8176AF 0%, #C0B7E8 100%);
-}
-
-.wide-button:hover{    
-    background: linear-gradient(270deg, #8176AF 0%, #C0B7E8 100%);
-}
-
-.wide-button-text { /*Написи на кнопках*/
-    text-align: center;
-    width: 133px;
-    height: 15px;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
-    color: var(--main-buttons-text-color);
-}
-
 /*Початок блоку Hero-Section----------------------------------------*/
 .hero-section-container{
     /*/border: greenyellow 1px solid;*/
@@ -232,7 +266,7 @@ h1{
 }
 
 .hero-photo img[alt="absolute-lines"]{
-    /*display: none;*/
+    display: none;
     position: absolute;
     z-index: -1;
 }
@@ -258,6 +292,15 @@ h1{
 
 .header-cover{
     overflow: hidden;
+}
+
+.menu-box{
+    display: flex;
+    align-items: center;
+}
+
+#menu-toggle {
+    opacity: 0;
 }
 
 @media (max-width: 1199px) {
@@ -303,10 +346,6 @@ h1{
 
 
 @media (max-width: 979px) {
-    nav{
-        display: none;
-    }
-
     .hero-section-container .arrow-right{
         display: none;
     }
@@ -333,9 +372,144 @@ h1{
         height: 60px;
         margin: 20px 0 40px 0;
     }    
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+    
+    li a{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;                
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    li{
+        margin: 20px 0 20px;
+    }  
+
+    .contact-menu-button{
+        margin: 20px 0 20px 0;
+    }
+
+
+    /*--------------------------------------*/
+    #menu-toggle {
+        opacity: 0;
+    }
+    
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 90px;
+        right: 20px;
+        width: 33px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 5;
+    }
+    
+    .menu-btn > span,
+    .menu-btn > span::before,
+    .menu-btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #C0B7E8 -11.84%, #8176AF 100%);
+        border-radius: 40px;
+    }
+
+    .menu-btn > span::before {
+        content: '';
+        top: -10px;
+    }
+
+    .menu-btn > span::after {
+        content: '';
+        top: 10px;
+    }    
+    
+    .menu-box {        
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        right: -100%;
+        width: 350px;
+        height: 400px;
+        margin: 0;
+        padding: 115px 0 0 0;
+        list-style: none;
+        text-align: center;
+        background-color: var(--main-background-color);
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+        z-index: 3;
+    }
+    
+    
+    #menu-toggle:checked ~ .menu-btn > span {
+        transform: rotate(45deg);
+    }
+    
+    #menu-toggle:checked ~ .menu-btn > span::before {
+        top: 0;
+        transform: rotate(0);
+        opacity: 0;
+    }
+    
+    #menu-toggle:checked ~ .menu-btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    
+    #menu-toggle:checked ~ .menu-box {
+        visibility: visible;
+        right: 0;
+    }
+    
+    .menu-btn > span,
+    .menu-btn > span::before,
+    .menu-btn > span::after {
+        transition-duration: .25s;
+    }
+    .menu-box {
+        transition-duration: .25s;
+    }
+    .menu-item {
+        transition-duration: .25s;
+    }
+
+    /*--------------------------------------*/
 }
 
 @media (max-width: 767px) {
+    .menu-btn {
+        display: flex; 
+        align-items: center;
+        position: fixed;
+        top: 53px;
+        right: 20px;
+        width: 33px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 5;
+    }
+
+    .menu-box {        
+        padding: 80px 0 0 0;
+        
+    }
+    
+
     .hero-section-container{
         flex-direction: column-reverse;
     }
@@ -384,7 +558,7 @@ h1{
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        text-fill-color: transparent;
+        /*text-fill-color: transparent;*/
     }
 
     .hero-section-container img[alt="HYDRA VR"]{
@@ -399,23 +573,24 @@ h1{
 
 
     .line-box :first-child{
-        top: 33px;
-        left: 209px;
-        width: 300px;
+        top: 9px;
+        left: 196px;
+        width: 342px;
     }
     
     .line-box :nth-child(2){
-        top: -183px;
-        left: 90px;
-        width: 340px;
+        top: -95px;
+        left: 124px;
+        width: 294px;
     }
     
     .line-box :nth-child(3){
-        top: 183px;
+        top: 179px;
         left: -44px;
-        width: 599px;
+        width: 664px;
         z-index: 10;
-    }
+    }    
+    
 }
 
 /*Кінець блоку Hero-Section*/
@@ -728,11 +903,12 @@ h2{
     height: 557px;
 }
 .big-photo-container img{
-    object-fit: fill;
+    width: 524px;
+    height: 557px;
 }
 
 .text-part-in-text-photo-container{
-    padding-top: 45px;
+    /*padding-top: 45px;===================================*/
 }
 
 .text-in-text-photo-container{
@@ -1319,20 +1495,6 @@ h2{
 }
 
 /*Кінець блоку tech-section*/
-/*Блок для Лого і напису*/
-.logo-block{
-    display: flex;
-}
-
-.logo-block img{
-    margin-right: 3.3px;
-}
-
-.logo-block :first-child{
-    margin-right: 15px;
-    margin-left: 5.8%;
-}
-/*Кінець блоку для Лого і напису*/
 
 /*Блок для форми*/
 .form-container{/*Контейнер, щоб вирівнять форму*/
@@ -1753,6 +1915,10 @@ fieldset{
     letter-spacing: 0.13em;
     color: var(--main-text-color-white);
     margin: 49px 0 59px;
+}
+
+.footer .wide-button{
+    white-space: nowrap;
 }
 
 @media (max-width: 920px) { 

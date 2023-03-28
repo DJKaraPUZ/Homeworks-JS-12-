@@ -15,31 +15,41 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <style>
+      </style>
+
 </head>
 <body>
     <div class="header-cover">
         <header>
             <div class="logo-block">
-                <img class="hydra_logo" src="img/Main_logo_small.svg" alt="HYDRA logo">
-                <img class="hydra_logo" src="img/H_logo.svg" alt="HYDRA logo">
-                <img class="hydra_logo" src="img/Y_logo.svg" alt="HYDRA logo">
-                <img class="hydra_logo" src="img/D_logo.svg" alt="HYDRA logo">
-                <img class="hydra_logo" src="img/R_logo.svg" alt="HYDRA logo">
-                <img class="hydra_logo" src="img/A_logo.svg" alt="HYDRA logo">
+                <img class="hydra_logo" src="img/Main_logo_small.svg" alt="HYDRA big logo">
+                <img class="hydra_logo" src="img/H_logo.svg" alt="HYDRA logo char">
+                <img class="hydra_logo" src="img/Y_logo.svg" alt="HYDRA logo char">
+                <img class="hydra_logo" src="img/D_logo.svg" alt="HYDRA logo char">
+                <img class="hydra_logo" src="img/R_logo.svg" alt="HYDRA logo char">
+                <img class="hydra_logo" src="img/A_logo.svg" alt="HYDRA logo char">
             </div>
-            <nav>
-                <ul>
-                    <li><a class="menu-item" href="#">ABOUT</a></li>
-                    <li><a class="menu-item" href="#">SERVICES</a></li>
-                    <li><a class="menu-item" href="#">TECHNOLOGIES</a></li>
-                    <li><a class="menu-item" href="#">HOW TO</a></li>
-                </ul>
-                <div class="contact-menu-button">
-                    <p>CONTACT US</p>
+            <nav class="main-nav hamburger-menu">
+                <input id="menu-toggle" type="checkbox"/>
+                <label class="menu-btn" for="menu-toggle">
+                    <span></span>
+                </label>      
+                <div class="menu-box">
+                    <ul>
+                        <li><a class="menu-item" href="#">ABOUT</a></li>
+                        <li><a class="menu-item" href="#">SERVICES</a></li>
+                        <li><a class="menu-item" href="#">TECHNOLOGIES</a></li>
+                        <li><a class="menu-item" href="#">HOW TO</a></li>
+                    </ul>
+                    <div class="contact-menu-button">
+                        <p>CONTACT US</p>
+                    </div>
+                    <div class="menu-button">
+                        <p class="wide-button-text">JOIN HYDRA</p>
+                    </div>
                 </div>
-                <div class="menu-button">
-                    <p class="wide-button-text">JOIN HYDRA</p>
-                </div>              
             </nav>
         </header>        
         <div class="hero-section-container"> 
@@ -96,7 +106,6 @@
                 </div>
             </div>
         </div>
-
         <div class="swiper" id="contact-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -132,7 +141,6 @@
             <div class="swiper-button-next">                                          
             </div>
         </div>
-
     </div>
     <div class="short-textblock">
         <div>
