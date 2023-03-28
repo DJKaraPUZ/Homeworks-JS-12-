@@ -4,11 +4,6 @@ html{
     --main-background-color: #302C42; /*Основний колір тла на сайті*/
 }
 
-.center-div .swiper {
-    transform: translate(0px);
-    
-}
-
 .swiper {
     position: relative;
     background-color: var(--main-background-color);
@@ -114,10 +109,10 @@ li:hover{
 .header-cover{/*Треба, щоб хвилясті лінії були на 3-ох різних блоках*/
     display: flex;    
     flex-direction: column;
-    background-image: url(img/Hero_section_Vector\ 1.svg),
-        url(img/Hero_section_Vector\ 2.svg),
-        url(img/Hero_section_Vector\ 3.svg),
-        url(img/Hero_section_Vector\ 4.svg);
+    background-image: url(img/Hero_section_Vector_1.svg),
+        url(img/Hero_section_Vector_2.svg),
+        url(img/Hero_section_Vector_3.svg),
+        url(img/Hero_section_Vector_4.svg);
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-position: right 170px, top right 150px, right bottom 250px, left;
 }
@@ -310,7 +305,7 @@ h1{
     }
 
     .header-cover{
-        background-image: url(img/Hero_section_Vector\ 4.svg);
+        background-image: url(img/Hero_section_Vector\_4.svg);
         background-repeat: no-repeat;
         background-position: left;
     }  
@@ -905,10 +900,6 @@ h2{
 .big-photo-container img{
     width: 524px;
     height: 557px;
-}
-
-.text-part-in-text-photo-container{
-    /*padding-top: 45px;===================================*/
 }
 
 .text-in-text-photo-container{
