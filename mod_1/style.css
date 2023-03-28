@@ -162,7 +162,6 @@ h1{
         url(img/Hero_section_Vector\ 4.svg);
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-position: right 170px, top right 150px, right bottom 250px, left;
-
 }
 
 .wide-button{ /*звичайна кнопка на сайті - їх більшість*/
@@ -193,12 +192,12 @@ h1{
     color: var(--main-buttons-text-color);
 }
 
-/*Початок блоку Hero-Section*/
+/*Початок блоку Hero-Section----------------------------------------*/
 .hero-section-container{
     /*/border: greenyellow 1px solid;*/
     display: flex;
     justify-content: space-between;
-    
+    align-items: center;
     margin: 0 6% 0 5%;
 }
 
@@ -225,9 +224,200 @@ h1{
 
 .main-photo{    
     background: #A3A3A3;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
 }
+
+.hero-photo{
+    position: relative;
+}
+
+.hero-photo img[alt="absolute-lines"]{
+    /*display: none;*/
+    position: absolute;
+    z-index: -1;
+}
+
+.line-box{
+    position: relative;
+}
+
+.line-box :first-child{
+    top: -84px;
+    left: 192px;
+}
+
+.line-box :nth-child(2){
+    top: -258px;
+    left: 74px;
+}
+
+.line-box :nth-child(3){
+    top: 129px;
+    left: -126px;
+}
+
+.header-cover{
+    overflow: hidden;
+}
+
+@media (max-width: 1199px) {
+    .hero-section-container img[alt="HYDRA VR"]{
+        height: 348px;
+        width: 400px;
+    }
+
+    .header-cover{
+        background-image: url(img/Hero_section_Vector\ 4.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+    }  
+
+    .hero-photo img[alt="absolute-lines"]{
+        display: block;
+        position: absolute;
+    }
+
+    .line-box{
+        left: -78px;
+        top: -23px;
+    }
+
+    .hero-section-container h1{
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .hero-section-container{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .text-in-text-hero-container{
+        width: 380px;
+        font-size: 14px;
+        line-height: 20px;
+        height: 60px;
+        margin: 25px 0 50px 0;
+    }    
+}
+
+
+@media (max-width: 979px) {
+    nav{
+        display: none;
+    }
+
+    .hero-section-container .arrow-right{
+        display: none;
+    }
+
+    .hero-section-container img[alt="HYDRA VR"]{
+        height: 295px;
+        width: 340px;
+    }
+
+    .line-box{
+        left: -111px;
+        top: -60px;
+    }
+
+    .hero-section-container h1{
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .text-in-text-hero-container{
+        width: 320px;
+        font-size: 12px;
+        line-height: 20px;
+        height: 60px;
+        margin: 20px 0 40px 0;
+    }    
+}
+
+@media (max-width: 767px) {
+    .hero-section-container{
+        flex-direction: column-reverse;
+    }
+
+    .text-in-text-hero-container{
+        display: none;
+    }
+    .header-cover{
+        background-image: none;        
+    }
+
+    .hero-section-container .wide-button{
+        width: 292px;
+        height: 52px;
+        margin-top: 50px;
+    }
+    
+    .hero-section-container .wide-button-text{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        white-space: nowrap;
+    }
+
+    .hero-section-container h1{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        vertical-align: baseline;
+    }
+
+    .hero-section-container .h1-color{
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        text-align: center;
+
+        background: linear-gradient(91.57deg, #C0B7E8 -1.02%, #8176AF 36.25%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    .hero-section-container img[alt="HYDRA VR"]{
+        height: 295px;
+        width: 340px;
+    }
+
+    .line-box{
+        left: -111px;
+        top: -60px;
+    }
+
+
+    .line-box :first-child{
+        top: 33px;
+        left: 209px;
+        width: 300px;
+    }
+    
+    .line-box :nth-child(2){
+        top: -183px;
+        left: 90px;
+        width: 340px;
+    }
+    
+    .line-box :nth-child(3){
+        top: 183px;
+        left: -44px;
+        width: 599px;
+        z-index: 10;
+    }
+}
+
 /*Кінець блоку Hero-Section*/
 
 /*Початок блоку з контактною інформацією*/
@@ -245,8 +435,46 @@ h1{
     padding: 0 3.5%;
 }
 
-.contact-container .form-line{
+#contact-swiper{
     display: none;
+    width: 347px;
+    height: 109px;
+    margin-top: 53px;
+    margin-bottom: 55px;
+    background: radial-gradient(50% 2900.76% at 50% 53.89%,
+    rgba(58, 52, 86, 0.95) 0%, #211E2E 100%);
+    box-shadow: 0px 4px 4px rgba(192, 183, 232, 0.01);
+    border-radius: 90px;
+}
+
+#contact-swiper .swiper-button-prev{    
+    left: 5px;
+    top: 67px;
+    height: 24px;
+    width: 24px;
+    background-image: url(img/contact_block_prev_button.svg);
+}
+
+#contact-swiper h3{
+    display: none;
+}
+
+
+#contact-swiper .swiper-button-next{
+    left: 315px;
+    top: 67px;
+    height: 24px;
+    width: 24px;
+    background-image: url(img/contact_block_next_button.svg);
+}
+
+#contact-swiper .contact-part{    
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 62px;
+    width: 347px;
 }
 
 .contact-part{    
@@ -300,23 +528,20 @@ h3{
 
 @media (max-width: 1050px) {
     .contact-container{
-        padding: 10px 3.5% 10px;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 315px;
-        /*margin: 88px 1% 90px 1%;*/
-        margin: 15px 5% 15px 6%;   
-        width: 80vw;     
-    }
-
-    .deco-div{
         display: none;
     }
 
-    .contact-container .form-line{
+    #contact-swiper{
         display: block;
     }
+
+    .contact-part img{
+        margin-right: 10px;
+    }
 }
+
+
+
 /*Кінець блоку з контактною інформацією*/
 
 
