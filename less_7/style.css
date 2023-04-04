@@ -1,0 +1,349 @@
+html{
+    --header-height: 105px;
+    --footer-height: 45px;
+    --all-border: 2px;
+    --card-color-light: rgb(199,183,183);
+    --card-color-dark: rgb(104,81,116);
+}
+/*HEADER PART*/
+
+.header{    
+    height: var(--header-height);
+    min-width: calc((900px + (2 *30px)) + (2 * (210px + (2 * 5px))));
+    /*Мінімальна ширина хедера і футера привязана до ширини трьох
+     основних блоків і їх падінгів.
+    Якби це не домашка на раз - зробив би через змінні. ЧЕСНО!*/
+    background-color: rgb(211, 183, 20);
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.div-logo{
+    display: flex;
+    align-items: center;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+ul{
+    display: flex;
+}
+
+nav a{    
+    text-decoration: none;
+    color: black;
+    margin-right: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.main-logo{
+    margin-left: 25px;
+    height: 60px;
+}
+
+/*MAIN CONTENT PART*/
+.main-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main{
+    width: 100%;
+    max-width: 1170px;
+    min-width: 900px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 30px 30px 0px 30px; 
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: black;
+    margin: 20px;
+}
+
+.offer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.offer{
+    width: 280px;
+    height: 350px;
+    border: var(--all-border) black solid;
+    border-radius: 15px;
+    margin: 0px 5px 20px 5px;
+    text-align: center;
+    padding: 3px;
+}
+
+.offer:hover{
+    width: 280px;
+    height: 350px;
+    border: var(--all-border) rgb(211, 183, 20) solid;
+    background-color: rgb(214, 212, 204);
+    border-radius: 15px;
+    margin: 0px 5px 20px 5px;
+    text-align: center;
+    padding: 3px;
+}
+
+.picture-frame{
+    display: inline-block;
+    width: 93px;
+    height: 93px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid var(--card-color-light) 12px;
+    margin: 10px;
+}
+
+.cadr-mane{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 5px;
+}
+
+.card-text{
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 5px;
+    overflow: hidden;
+    height: 114px;
+}
+
+.button-go{
+    display: inline-block;
+    background-color: var(--card-color-dark);
+    color: white;
+    text-decoration: none;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 5px 20px 0px 20px;
+}
+
+.button-go:hover{
+    display: inline-block;
+    background-color: var(--card-color-light);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 5px;
+    border: 2px solid black;
+}
+
+.aside{
+    min-width: 210px;
+    max-width: 210px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 5px;
+}
+
+.left-aside{    
+    background-color: rgb(199, 152, 185);
+    order: -1;
+}
+
+.right-aside{    
+    background-color: rgb(156, 177, 199);
+}
+
+/*FOOTER CONTENT PART*/
+footer{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height: var(--footer-height);   
+    background-color: rgb(134, 236, 134);
+    font-size: 18px;
+    font-weight: bold;
+    min-width: calc((900px + (2 *30px)) + (2 * (210px + (2 * 5px))));
+}
+
+@media (max-width: 1400px){
+    .main-container{
+        flex-direction: column;
+    }
+
+    .aside{
+        max-width: 100%;
+    }
+
+    footer{
+        min-width: 100%;
+    }
+
+    .header{
+        min-width: 100%;
+    }
+
+    .main{
+        width: 100%;
+        min-width: 500px;        
+        padding: 0 0;
+    }
+
+    .main p{
+        font-size: 18px;
+    }
+    
+}
+
+@media (max-width: 700px) {
+    .main p{
+        font-size: 16px;
+    }
+    
+    h1{
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 567px) {
+    .main{
+        width: 100%;
+        min-width: 300px;        
+        padding: 0 0;
+    }
+
+    .offer{
+        width: 260px;
+        height: 300px;
+        border-radius: 13px;
+        margin: 0px 5px 10px 5px;
+        padding: 1px;
+    }
+    
+    .offer:hover{
+        width: 260px;
+        height: 300px;
+        border: var(--all-border) rgb(211, 183, 20) solid;
+        background-color: rgb(214, 212, 204);
+        border-radius: 15px;
+        border-radius: 13px;
+        margin: 0px 5px 10px 5px;
+        padding: 1px;
+    }
+
+    .card-text{
+        height: 70px;
+    }
+
+    #menu-toggle{
+        display: block;
+        opacity: 0;
+    }
+    
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 40px;
+        right: 20px;
+        width: 33px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 5;
+    }
+    
+    .menu-btn > span,
+    .menu-btn > span::before,
+    .menu-btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: black;
+        border-radius: 40px;
+    }
+
+    .menu-btn > span::before {
+        content: '';
+        top: -10px;
+    }
+
+    .menu-btn > span::after {
+        content: '';
+        top: 10px;
+    }    
+    
+    ul{
+        flex-direction: column;
+    }
+
+    li{
+        margin: 5% 0;
+    }
+
+    .menu-box {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 5% 0 0 0;
+        list-style: none;
+        text-align: center;
+        background-color: rgb(211, 183, 20);
+        z-index: 3;
+    }
+    
+    
+    #menu-toggle:checked ~ .menu-btn > span {
+        transform: rotate(45deg);
+    }
+    
+    #menu-toggle:checked ~ .menu-btn > span::before {
+        top: 0;
+        transform: rotate(0);
+        opacity: 0;
+    }
+    
+    #menu-toggle:checked ~ .menu-btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    
+    #menu-toggle:checked ~ .menu-box {
+        visibility: visible;
+        right: 0;
+    }
+    
+    .menu-btn > span,
+    .menu-btn > span::before,
+    .menu-btn > span::after {
+        transition-duration: .25s;
+    }
+    .menu-box {
+        transition-duration: .25s;
+    }
+    .menu-item {
+        transition-duration: .25s;
+    }
+
+}
