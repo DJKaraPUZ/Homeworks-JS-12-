@@ -529,7 +529,7 @@
         const arrKeys = {}
 
         for(const obj of objNew){ //Збираємо ключі, як умієм :(
-            for([key, value] of Object.entries(obj)){
+            for(const[key, value] of Object.entries(obj)){
                 arrKeys[key] = key
             }
         }
