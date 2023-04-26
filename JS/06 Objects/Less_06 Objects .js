@@ -92,23 +92,23 @@
 {
     const body = {
         tagName : "body",
-        arrts: {},
+        attrs: {},
         children : [{
             tagName : "div",
-            //arrts: {},
+            //attrs: {},
             children : [{
                 tagName : "span",
-                //arrts: {},
+                //attrs: {},
                 children : ["Enter a data please:"]
             },
             {
                 tagName : "br/",
-                //arrts: {},
+                //attrs: {},
                 //children : []                
             },
             {
                 tagName : "input",
-                arrts: {
+                attrs: {
                     type :'text',
                     id : 'name'
                 },
@@ -116,7 +116,7 @@
             },
             {
                 tagName : "input",
-                arrts: {
+                attrs: {
                     type :'text',
                     id : 'surname'
                 },
@@ -124,17 +124,17 @@
             }]            
         },{
             tagName : "div",
-            arrts: {},
+            attrs: {},
             children : [{
                 tagName : "button",
-                arrts: {
+                attrs: {
                     id : 'ok'
                 },
                 children : ["OK"]
             },
             {
                 tagName : "button",
-                arrts: {
+                attrs: {
                     id : 'cancel'
                 },
                 children : ["Cancel"]
@@ -143,7 +143,7 @@
     }
 
     alert(body.children[1].children[1].children[0])
-    alert(body.children[0].children[3].arrts.id)
+    alert(body.children[0].children[3].attrs.id)
 }
 
 /*Parent ==== Додайте кожному об'єкту тега з попереднього завдання зв'язок з батьком, 
@@ -151,23 +151,23 @@
 {
     const body = {
         tagName : "body",
-        arrts: {},
+        attrs: {},
         children : [{
             tagName : "div",
-            //arrts: {},
+            //attrs: {},
             children : [{
                 tagName : "span",
-                //arrts: {},
+                //attrs: {},
                 children : ["Enter a data please:"]
             },
             {
                 tagName : "br/",
-                //arrts: {},
+                //attrs: {},
                 //children : []                
             },
             {
                 tagName : "input",
-                arrts: {
+                attrs: {
                     type :'text',
                     id : 'name'
                 },
@@ -175,7 +175,7 @@
             },
             {
                 tagName : "input",
-                arrts: {
+                attrs: {
                     type :'text',
                     id : 'surname'
                 },
@@ -183,17 +183,17 @@
             }]            
         },{
             tagName : "div",
-            arrts: {},
+            attrs: {},
             children : [{
                 tagName : "button",
-                arrts: {
+                attrs: {
                     id : 'ok'
                 },
                 children : ["OK"]
             },
             {
                 tagName : "button",
-                arrts: {
+                attrs: {
                     id : 'cancel'
                 },
                 children : ["Cancel"]
@@ -215,23 +215,23 @@
 {
     const body = {
         tagName : "body",
-        arrts: {},
+        attrs: {},
         children : [{
             tagName : "div",
-            //arrts: {},
+            //attrs: {},
             children : [{
                 tagName : "span",
-                //arrts: {},
+                //attrs: {},
                 children : ["Enter a data please:"]
             },
             {
                 tagName : "br/",
-                //arrts: {},
+                //attrs: {},
                 //children : []                
             },
             {
                 tagName : "input",
-                arrts: {
+                attrs: {
                     type :'text',
                     id : 'name'
                 },
@@ -239,7 +239,7 @@
             },
             {
                 tagName : "input",
-                arrts: {
+                attrs: {
                     type :'text',
                     id : 'surname'
                 },
@@ -247,24 +247,24 @@
             }]            
         },{
             tagName : "div",
-            arrts: {},
+            attrs: {},
             children : [{
                 tagName : "button",
-                arrts: {
+                attrs: {
                     id : 'ok'
                 },
                 children : ["OK"]
             },
             {
                 tagName : "button",
-                arrts: {
+                attrs: {
                     id : 'cancel'
                 },
                 children : ["Cancel"]
             }
         ]}]
     }
-    body.children[1].children[0].arrts[prompt("Введіть новий ключ")] = prompt('Введіть значення для нового ключа')
+    body.children[1].children[0].attrs[prompt("Введіть новий ключ")] = prompt('Введіть значення для нового ключа')
 }
 
 /*Destructure ==== Використовуючи деструктуризацію структури із завдання HTML Tree:
@@ -274,7 +274,7 @@
 {
     const body = {
         tagName : "body",
-        arrts: {},
+        attrs: {},
         children : [{
             tagName : "div",
             children : [{
@@ -286,31 +286,31 @@
             },
             {
                 tagName : "input",
-                arrts: {
+                attrs: {
                     type :'text',
                     id : 'name'
                 },
             },
             {
                 tagName : "input",
-                arrts: {
+                attrs: {
                     type :'text',
                     id : 'surname'
                 },
             }]            
         },{
             tagName : "div",
-            arrts: {},
+            attrs: {},
             children : [{
                 tagName : "button",
-                arrts: {
+                attrs: {
                     id : 'ok'
                 },
                 children : ["OK"]
             },
             {
                 tagName : "button",
-                arrts: {
+                attrs: {
                     id : 'cancel'
                 },
                 children : ["Cancel"]
@@ -322,7 +322,7 @@
     alert("Значення тексту у тезі span = " + spanText)
     const {children: [,{children: [,{children: buttonText}]}]} = body
     alert("Значення тексту в другій кнопці = " + buttonText)
-    const {children: [{children: [,,,{arrts:{id: djk}}]}]} = body
+    const {children: [{children: [,,,{attrs:{id: djk}}]}]} = body
     alert("Значення атрибуту id у другому input = " + djk)
 }
 
@@ -365,7 +365,7 @@
                     два перші елементи та довжину масиву в змінні a, b та length */
 {
     let arr = [1,2,3,4, 5,6,7,10]
-    const {0: a, 1: b, length: length} = arr
+    const {0: a, 1: b, length} = arr
     alert(`arr = [1,2,3,4, 5,6,7,10]
     a: ${a}  b: ${b}  length: ${length}`)
 }
@@ -550,7 +550,7 @@
     const arrKeys = {}
 
     for(const obj of arr){ //Збираємо ключі, як умієм :(
-        for([key, value] of Object.entries(obj)){
+        for(const [key, value] of Object.entries(obj)){
             arrKeys[key] = key
         }
     }
