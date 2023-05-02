@@ -67,24 +67,24 @@
     if (age < 0) {
         alert("Надто молодий, щоб користуватися ПК");
     }
-    else if (age >= 0 && age < 18){
+    else { if (age < 18){
         alert("школяр");
     }
-    else if (age >= 18 && age < 30){
+    else { if (age < 30){
         alert("молодь");
     }
-    else if (age >= 30 && age < 45){
+    else { if (age < 45){
         alert("зрілість");
     }
-    else if (age >= 45 && age < 60){
+    else { if (age < 60){
         alert("захід сонця");
     }
-    else if (age >= 60) {
+    else { if (age >= 60) {
         alert("як пенсія?");
     }
     else {
         alert("чи кіборг, чи KERNESS");
-    }
+    }}}}}}
 }                        
 
 /*switch: sizes ==== Зробіть завдання Comparison: sizes використовуючи switch
@@ -190,7 +190,7 @@
         //якщо є - дістати значення по ключу. це буде функція. Запустити її
         //якщо немає - витягти з об'єкта cases значення по ключу, ім'я якого лежить у змінній defaultKey. Запустити
         //Нехай функція noSwitch повертає те, що повертає одна з функцій з об'єкта про всяк випадок
-        if(Object.keys(cases).includes(key)){
+        if(cases[key] !== undefined){//if(Object.keys(cases).includes(key)){
             //console.log(key + " є в CASES!")
             return cases[key]()
         }else{
@@ -273,12 +273,12 @@
         rate.style.cssText = `background-Color: yellow; min-height: 30%; display: flex; align-items: center; justify-content: center;`
         const result = document.createElement('div')
         result.style.cssText = `background-Color: RoyalBlue	; min-height: 30%; display: flex; align-items: center; justify-content: center; `
-
         const calcResult = () => {
-            rate.innerHTML = "<b>" + (to.value / from.value).toFixed(2) + "</b>"
-            result.innerHTML = "<b>" + (amount.value * (to.value / from.value)).toFixed(2)  + "</b>"
+            let curs = (to.value / from.value).toFixed(2)
+            let amounti = (amount.value * (to.value / from.value)).toFixed(2)
+            rate.innerHTML = "<b>" + curs + "</b>"
+            result.innerHTML = "<b>" + amounti  + "</b>"
         }
-
         for (const [key, value] of Object.entries(djk)){
             let option1 = document.createElement('option')
             let option2 = document.createElement('option')
@@ -323,17 +323,17 @@
             countries.append(option)            
         }
         
-        for(const city of data[countries.value]){
-            let option = document.createElement('option')
-            option.textContent = city
-            option.value = city
-            cities.append(option)
-        }
+        newConntry()//Але струлочкну функцію довелось переписати через function 
 
-        mainDiv.append(countries)
+
+
+
+
+
+        mainDiv.append(countries)//333
         mainDiv.append(cities)
 
-        const newConntry = () => {
+        function newConntry () {
             cities.innerText = ""
             for(const city of data[countries.value]){
                 let option = document.createElement('option')
