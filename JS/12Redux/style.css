@@ -1,0 +1,249 @@
+html{
+    --border-color: blue;
+    --field-main-color: rgb(238, 235, 195);
+    --field-secondary-color: rgb(212, 176, 76);
+}
+
+/*.shop :nth-child(2){
+    background-color: red;
+}*/
+
+.main-div{
+    background-color: black;
+    min-width: 97vw;
+    min-height: 97vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamefild-div{
+    display: flex;    
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;    
+    position: relative;
+    background-color: darkgray;
+    background-image: url(img/tree_1.png), url(img/background.png);
+    background-position: top 25vmin left 0, top;
+    background-size: 16vmin, 140vmin;
+    background-repeat: repeat-x, no-repeat;
+    min-width: 90vmin;
+    min-height: 90vmin;    
+    overflow: hidden;
+}
+
+.field{
+    display: flex;
+    justify-content: space-between;
+    min-height: 12vmin;
+    min-width: 98%;    
+    display: flex;
+    margin-top: 0.5vmin;
+    margin-bottom: 0.5vmin;
+    background-color: var(--field-main-color);
+    border: solid 2px var(--border-color);
+}
+
+.bottom-field input{
+    margin: 1vmin 1vmin;
+    text-align: center;
+}
+
+.bottom-field input[type="number"]{
+    max-width: 14vmin;
+    font-size: 7vmin;
+}
+
+.bottom-field input[type="text"]{
+    max-width: 30vmin;
+    font-size: 7vmin;    
+}
+
+#button-holder{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#button-holder button{    
+    margin: 0.5vmin;
+    min-width: 9vmin;
+    
+    font-size: 2vmin;
+    font-weight: bold;
+}
+
+#qr{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 12%;
+    right: 0.3%;
+    background-image: url(img/qr.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40vmin;
+    height: 20vmin;
+    z-index: 5;
+    padding-bottom: 5vmin;
+    text-align: center;
+    font-size: 4vmin;
+}
+
+#qr p{
+    text-align: center;
+    font-size: 5vmin;
+}
+
+.bottom-field button{
+    margin: 2vmin 1vmin;
+    min-width: 9vmin;
+    font-size: 4vmin;
+    font-weight: bold;
+}
+
+.my-money{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.3vmin;
+    font-weight: bolder;
+}
+
+.my-money input[type="text"]{
+    max-width: 20vmin;
+    margin: 0 1vmin;
+    
+}
+
+#money{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 9vmin;
+    font-weight: bolder;
+    border: solid 1px red;
+    margin: 2px;
+    background-color: var(--field-secondary-color);
+}
+
+.shop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7vmin;
+    font-weight: bolder;
+    border: solid 1px red;
+    margin: 2px;
+    background-color: var(--field-secondary-color);
+}
+
+.product-ico{
+    max-height: 9vmin;
+}
+
+.beer-store{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: end;
+    position: absolute;
+    bottom: 19%;
+    left: 1.5%;
+    width: 16vmin;
+    max-height: 18vmin;
+    flex-wrap: wrap;
+}
+
+.box-beer{
+    margin: 1px;
+    width: 7.7vmin;
+    height: 5vmin;
+}
+
+.price-container{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 60%;
+    left: 17%;
+    z-index: 8;
+    min-width: 50vmin;
+    min-height: 16vmin;
+    /*background-color: rgba(30,30,30, 0.3);*/
+}
+
+.price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 9vmin;
+    font-weight: bolder;   
+    min-width: 12vmin;
+    min-height: 8vmin;
+    background-image: url(img/paper.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.product-img{
+    max-width: 12vmin;
+    max-height: 8vmin;
+}
+
+.one-price-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.stall{
+    position: absolute;
+    left: 5%;
+    bottom: 15%;
+    width: 80%;
+    height: 70%;
+    z-index: 3;
+}
+
+#car{
+    position: absolute;
+    bottom: 20%;
+    right: 0.5%;
+    width: 30%;
+    height: 30%;
+    z-index: 2;
+}
+
+
+#boombox{
+    position: absolute;
+    bottom: 45%;
+    left: 26%;
+    width: 19%;
+    height: 10%;
+    z-index: 3;
+}
+
+.doba{
+    position: absolute;
+    bottom: 47%;
+    width: 20%;
+    height: 20%;
+    z-index: 3;
+}
+
+#truck{
+    position: absolute;
+    bottom: 40%;
+    left: -60%;
+    width: 50%;
+    height: 30%;
+    z-index: 2;
+    transition-duration: 4s;
+}
