@@ -8,6 +8,54 @@ html{
     background-color: red;
 }*/
 
+#voinBD{    
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 99vmin;
+    min-height: 99vmin;
+    background-color: black;
+    background-image: url(img/DB_voin.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    z-index: 20;
+}
+
+#voinBD div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color:yellow;
+    font-size: 4vmin;
+    font-weight: bolder;
+}
+
+#deputatBD{    
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 99vmin;
+    min-height: 99vmin;
+    background-color: white;
+    background-image: url(img/deputatBD.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+    z-index: 20;
+}
+
+#deputatBD div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: rgb(10, 13, 63);
+    font-size: 5.2vmin;
+    font-weight: bolder;
+}
+
 .main-div{
     background-color: black;
     min-width: 97vw;
@@ -38,7 +86,7 @@ html{
 .field{
     display: flex;
     justify-content: space-between;
-    min-height: 12vmin;
+    min-height: 11vmin;
     min-width: 98%;    
     display: flex;
     margin-top: 0.5vmin;
@@ -54,12 +102,12 @@ html{
 
 .bottom-field input[type="number"]{
     max-width: 14vmin;
-    font-size: 7vmin;
+    font-size: 5vmin;
 }
 
 .bottom-field input[type="text"]{
     max-width: 30vmin;
-    font-size: 7vmin;    
+    font-size: 5vmin;    
 }
 
 #button-holder{ 
@@ -113,6 +161,7 @@ html{
     align-items: center;
     font-size: 2.3vmin;
     font-weight: bolder;
+    justify-content: flex-end;
 }
 
 .my-money input[type="text"]{
@@ -182,7 +231,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 9vmin;
+    font-size: 6vmin;
     font-weight: bolder;   
     min-width: 12vmin;
     min-height: 8vmin;

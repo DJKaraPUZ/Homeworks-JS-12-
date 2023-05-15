@@ -4,6 +4,12 @@ let blue = 0;
 let carIndex = 0
 let goodDealIndex = -1
 let sellCounter = 1
+let inflationSpeed = 3//Одна з цін росте кожен Н-ний продаж
+let inflationValue = 1.4 //У скільки разів збільшиться ціна
+let angelsshare = 0.9
+let priceCoefficient = 0.5 // Коєфіцієнт для "закупочної" ціни
+let deputat = 24999
+let voin = -2000
 
 const buyButton = document.getElementById("buyButton")
 const productAmountInput = document.getElementById("prodAmount")
@@ -33,6 +39,9 @@ const moneyOnStore = document.getElementById("money")
 
 const qr = document.getElementById("qr")
 const qrText = document.querySelector("qr p")
+
+const deputatScreen = document.getElementById("deputatBD")
+const voinScreen = document.getElementById("voinBD")
 
 const beerBoxArr = [beerBox0, beerBox1, beerBox2, beerBox3, beerBox4]
 let beerBoxIndex = 5
@@ -106,7 +115,7 @@ function setBeerBox(butlers = 100){
 //Анімація доставки вантажівкою START
 let curPosX = 0
 let interval
-let n = 0.3
+let n = 3
 let canMoveTruck = true
 const img1 = document.getElementById("truck");
 
@@ -114,11 +123,11 @@ function move() {
     canMoveTruck = false
     img1.style.left = (curPosX += n) + "vmin";
     let djk = img1.style.left.slice(0, img1.style.left.indexOf("."))
-    if (+djk > 30) {
-        n = - 0.6
+    if (+djk > 50) {
+        n = - 7
         updateAll()
     }
-    if(+djk < -100){        
+    if(+djk < -80){        
         canMoveTruck = true
         clearInterval(interval)
     }
@@ -128,7 +137,7 @@ function moveTruck(){
     if(canMoveTruck){
         curPosX = 0
         interval = setInterval(move, 100);
-        n = 0.3
+        n = 0.8
         canMoveTruck = false
         return true
     }
@@ -236,7 +245,8 @@ function reducer(state, {type, productType, productAmount, money}){
         if(productAmount * productPrice <= money){
             if(productAmount <= state[productType]){
                 sellCounter++
-                return{
+                console.log("Успішний продаж " + productType + "  " + productAmount)
+                return{                    
                     ...state,
                     [productType]: state[productType] - productAmount,
                     DBmoney : state.DBmoney + productPrice * productAmount
@@ -252,15 +262,17 @@ function reducer(state, {type, productType, productAmount, money}){
     }else if(type === 'NEWPRICE'){//НОВІ ЦІНИ
         let productPrice = productType + "Price"
         //productPrice = state[productPrice]
+        console.log("НОВА ЦІНА " + productType)
         return{
             ...state,
-            [productPrice]: (state[productPrice] * 1.2).toFixed(1)
+            [productPrice]: (state[productPrice] * inflationValue).toFixed(1)
         }
     }else if(type === 'DELIVERY'){//ПОСТАВКА ТОВАРУ
+        console.log("ДОСТАВКА ТОВАРУ " + productType + "  " + productAmount)
         return{
             ...state,
             [productType]: state[productType] + productAmount,
-            DBmoney : state.DBmoney - (money *  productAmount)
+            DBmoney : state.DBmoney - ((money *  productAmount) + (money *  productAmount) * angelsshare)
         }
         //store.dispatch({type: 'DELIVERY', productType: needProduct, productAmount: 50, money: newPrice * 0.5})
     }
@@ -287,15 +299,7 @@ function updateAll(){
     moneyOnStore.innerText = "$" + djk.DBmoney.toFixed(1)
     document.title = "РОЗОРИ ЛАРЬОК $" + djk.DBmoney.toFixed(1)
 
-    if(djk.beer + djk.henn + djk.marl < 150){
-        if(djk.beer <= djk.henn && djk.beer <= djk.marl){
-            gepaDelivery("beer")
-        }else if(djk.henn <= djk.beer && djk.henn <= djk.marl){
-            gepaDelivery("henn")
-        }else{
-            gepaDelivery("marl")
-        }
-    }
+    delivetyChecker()
 
     if(djk.beer === 0 || djk.beer === 0 || djk.beer === 0){
         setTimeout(() => {
@@ -305,7 +309,7 @@ function updateAll(){
 
     setBeerBox(djk.beer)
     goodDeal()
-    if(sellCounter % 5 === 0){
+    if(sellCounter % inflationSpeed === 0){
         sellCounter++
         let expensiveProduct = Math.random() * 3
         if(expensiveProduct <= 1){
@@ -320,6 +324,10 @@ function updateAll(){
         store.dispatch({type: 'NEWPRICE', productType: expensiveProduct})
     }
     getNiceCar(djk.DBmoney)
+
+    setTimeout(() => {
+        hellOrHighWater(djk.DBmoney)
+    }, 2000); 
 }
 
 function DobkinSaysMassage(massage, kd=3500){
@@ -337,7 +345,8 @@ function goodDeal(){
         return
     }
     const goodArr = ["В гарадской бюджет паступіт значітельно большє срєдств!", 
-        "О! Тарговля ідьот!", "Скора куплю танк!", "Ще щось хороше", "Іще щось гарне!"]
+        "О! Тарговля ідьот!", "Скора куплю танк!", "Всє! Я рєшіл - іду в палітіку!", 
+        "Вільна каса!!!", "Прібіль не щітал, но АБАРОТІ - БЄШЄНІЄ!"]
 
     if(goodDealIndex >= goodArr.length){
         goodDealIndex = 0
@@ -349,25 +358,27 @@ function goodDeal(){
 
 function getNiceCar(bablo){
     //car.setAttribute('src','')
-    if(bablo < 20){
-        carIndex = 1
-    }else if(bablo < 50){
-        carIndex = 2
+    if(bablo < 50){
+        carIndex = 0
     }else if(bablo < 150){
-        carIndex = 3
+        carIndex = 1
+    }else if(bablo < 250){
+        carIndex = 2
     }else if(bablo < 500){
-        carIndex = 4
+        carIndex = 3
     }else if(bablo < 1000){
-        carIndex = 5
+        carIndex = 4
+    }else if(bablo < 2000){
+        carIndex = 5        
     }else if(bablo < 3000){
-        carIndex = 6        
+        carIndex = 6
     }else{
         carIndex = 7
     }
     car.setAttribute('src', 'img/car_'+ carIndex +'.png')    
 }
 
-function gepaDelivery(needProduct){
+function gepaDelivery(needProduct, needAmount){
     if(moveTruck()){
         moveTruck()
         console.log("Gepa tuta!!! " + needProduct)
@@ -375,12 +386,43 @@ function gepaDelivery(needProduct){
         //console.log(needProductPrice)
         let {[needProductPrice]: newPrice} = store.getState()
         //console.log(newPrice)
-        store.dispatch({type: 'DELIVERY', productType: needProduct, productAmount: 50, money: newPrice * 0.5})
+        store.dispatch({type: 'DELIVERY', productType: needProduct, productAmount: needAmount, money: newPrice * priceCoefficient })
         
     }
     return false
 }
 
+function delivetyChecker(){
+    if(canMoveTruck){
+        let djk = store.getState()
+        if(djk.beer + djk.henn + djk.marl < 200){
+            if(djk.beer <= djk.henn && djk.beer <= djk.marl){
+                gepaDelivery("beer", 100 - djk.beer)
+            }else if(djk.henn <= djk.beer && djk.henn <= djk.marl){
+                gepaDelivery("henn", 100 - djk.henn)
+            }else{
+                gepaDelivery("marl", 100- djk.marl)
+            }
+        }
+    }else{
+        console.log("delivetyChecker()::: Машина занята!" )
+    }
+}
+
+setInterval(() => {
+    console.log("delivetyChecker() works. canMoveTruck = " + canMoveTruck)
+    delivetyChecker()    
+}, 10000);
+
 updateAll()
 DobkinSaysMassage(`Начной ларьок! Начной ларьок!!! \nЯ етай ночью адінок...`, 6000)
 setBeerBox(100)
+
+function hellOrHighWater(bablo){
+    if(bablo > deputat){
+        deputatScreen.style.display = "flex"
+    }else if(bablo < voin){
+        voinScreen.style.display = "flex"
+    }
+
+}
