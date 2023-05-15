@@ -23,6 +23,18 @@ const beerBox3 = document.getElementById("beerBox4")
 const beerBox4 = document.getElementById("beerBox5")
 const beerStore = document.getElementById("beerStore")
 
+const marlStore = document.getElementById("marlStore")
+const marlBox0 = document.getElementById("marlBox0")
+const marlBox1 = document.getElementById("marlBox1")
+const marlBox2 = document.getElementById("marlBox2")
+const marlBox3 = document.getElementById("marlBox3")
+const marlBox4 = document.getElementById("marlBox4")
+const marlBox5 = document.getElementById("marlBox5")
+const marlBox6 = document.getElementById("marlBox6")
+const marlBox7 = document.getElementById("marlBox7")
+const marlBox8 = document.getElementById("marlBox8")
+const marlBox9 = document.getElementById("marlBox9")
+
 const firstProductButton = document.querySelector("#button-holder :nth-child(1)")
 const secondProductButton = document.querySelector("#button-holder :nth-child(2)")
 const lastProductButton = document.querySelector("#button-holder :nth-child(3)")
@@ -45,6 +57,9 @@ const voinScreen = document.getElementById("voinBD")
 
 const beerBoxArr = [beerBox0, beerBox1, beerBox2, beerBox3, beerBox4]
 let beerBoxIndex = 5
+
+const marlBoxArr = [marlBox0, marlBox1, marlBox2, marlBox3, marlBox4, 
+                    marlBox5, marlBox6, marlBox7, marlBox8, marlBox9]
 
 document.body.onmousemove = e => {
     const {layerX, layerY} = e
@@ -109,6 +124,13 @@ function setBeerBox(butlers = 100){
     beerStore.innerHTML = ""
     for(let i = 0; i < Math.floor(butlers / 20); i++){
         beerStore.append(beerBoxArr[i])        
+    }
+}
+
+function setMarlStore(sigarets = 100){    
+    marlStore.innerHTML = ""
+    for(let i = 0; i < Math.floor(sigarets / 10); i++){
+        marlStore.append(marlBoxArr[i])        
     }
 }
 
@@ -308,6 +330,7 @@ function updateAll(){
     }
 
     setBeerBox(djk.beer)
+    setMarlStore(djk.marl)
     goodDeal()
     if(sellCounter % inflationSpeed === 0){
         sellCounter++
@@ -330,7 +353,7 @@ function updateAll(){
     }, 2000); 
 }
 
-function DobkinSaysMassage(massage, kd=3500){
+function DobkinSaysMassage(massage, kd=5000){
     qr.style.display = "flex"
     qr.innerText = massage
     setTimeout(() => {
@@ -417,6 +440,7 @@ setInterval(() => {
 updateAll()
 DobkinSaysMassage(`Начной ларьок! Начной ларьок!!! \nЯ етай ночью адінок...`, 6000)
 setBeerBox(100)
+setMarlStore(100)
 
 function hellOrHighWater(bablo){
     if(bablo > deputat){
@@ -424,5 +448,4 @@ function hellOrHighWater(bablo){
     }else if(bablo < voin){
         voinScreen.style.display = "flex"
     }
-
 }
