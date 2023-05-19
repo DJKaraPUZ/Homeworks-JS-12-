@@ -1,4 +1,4 @@
-/*Literals ==== Знайдіть кілька навколишніх об'єктів реального світу та створіть відповідні об'єкти Javascript. 
+﻿/*Literals ==== Знайдіть кілька навколишніх об'єктів реального світу та створіть відповідні об'єкти Javascript. 
                 Наприклад:
                 const cat = {
                     //параметри кота
@@ -80,7 +80,7 @@
                     Виведіть значення атрибуту id у другому input, використовуючи . та [].
                     <body>
                         <div>
-                            <span>Enter a data please:</span><br/>
+                            <span>Enter a data please:</span><br>
                             <input type='text' id='name'>
                             <input type='text' id='surname'>
                         </div>
@@ -102,7 +102,7 @@
                 children : ["Enter a data please:"]
             },
             {
-                tagName : "br/",
+                tagName : "br",
                 //attrs: {},
                 //children : []                
             },
@@ -161,7 +161,7 @@
                 children : ["Enter a data please:"]
             },
             {
-                tagName : "br/",
+                tagName : "br",
                 //attrs: {},
                 //children : []                
             },
@@ -225,7 +225,7 @@
                 children : ["Enter a data please:"]
             },
             {
-                tagName : "br/",
+                tagName : "br",
                 //attrs: {},
                 //children : []                
             },
@@ -282,7 +282,7 @@
                 children : ["Enter a data please:"]
             },
             {
-                tagName : "br/",
+                tagName : "br",
             },
             {
                 tagName : "input",
