@@ -290,36 +290,11 @@
             }
         ]
     }
-
-    function deepCopy(obj){
-        let result = {}//ПОЧАТОК
-        for (const [key, value] of Object.entries(obj)) {
-            if(typeof(value) === "object" && value !== null){
-                result[key] = deepCopy(value)
-                //console.log(result[key])*/
-            }else{
-                result[key] = value
-            }
-            //console.log(result)
-        }
-        //console.log(result)
-        return result//КІНЕЦЬ
-    }
-/*Оце від ПОЧАТКУ до КІНЦЯ було написано швидко (ну, як для мене). Але, хоч мені здавалось, що все має працювати - воно нормально не працювало.
-* Я там "комбінував", як міг - все не те. Страждав годинами (без перебільшень) в дебагері. Функція ніби повертає щось притомне, 
-* а приймаюча сторона записує херню. Переписав з іншим підходом по ітерації. Теж щось не те!!!
-І ТУТ Я (ЗАПЛАКАНИМИ ОЧИМА) ПОМІЧАЮ, ЩО ПЕРЕД result НЕМАЄ let 
-Зараз початок третьої, але я йду не спать. Я йду молитися, щоб у тих, хто придумав IDE, яка не підсвічує відсутність ключових слів, був запор на 4 дні!!!
-Я розумію, що сам винен. Просто хотілось виговориться, а домашні всі сплять :(
-    for (const field in obj) {
-    if(typeof obj[field] == "object" && obj[field] !== null){                
-        result[field] = deepCopy(obj[field])
-    }else{
-        result[field] = obj[field]
-    }*/  
-
-    function deepCopy2(obj){
+     function deepCopy(obj){
         let result = {}
+        if(Array. isArray(obj)){
+            result = []
+        }
         for (const field in obj) {
             if(typeof obj[field] == "object" && obj[field] !== null){                
                 result[field] = deepCopy(obj[field])
@@ -331,15 +306,13 @@
     }
 
     const arr  = [1,"string", null, undefined, {a: 15, b: 10, c: [1,2,3,4],d: undefined, e: true }, true, false]
-    const arr2 = deepCopy(arr)
-    const arr3 = deepCopy2(arr) //arr2 та всі його вкладені масиви та об'єкти - інші об'єкти, які можна змінювати без ризику поміняти щось у arr
-    const table2 = deepCopy(table)    
+    const arr2 = deepCopy(arr) //arr2 та всі його вкладені масиви та об'єкти - інші об'єкти, які можна змінювати без ризику поміняти щось у arr
+    const table2 = deepCopy(table) // Аналогічно 
     
     console.log(arr)
     arr[4].a = 0
     arr[4].b = 0
-    console.log(arr2)
-    console.log(arr3)
+    console.log(arr2)    
     console.log(table)
     console.log(table2)
 }
@@ -383,28 +356,59 @@
     const arr  = [1,"string", null, undefined, {a: 15, b: 10, c: [1,2,3,4],d: undefined, e: true }, true, false]
     const jsonString = stringify(table) //Напишіть функцію stringify без використання JSON.stringify
     const jsonString2 = stringify(arr)  //Напишіть функцію stringify без використання JSON.stringify
+    //console.log(table)
     console.log(JSON.parse(jsonString)) //не повинно поламатися і повернути структуру, у всьому схожу з оригінальним arr або table
     console.log(JSON.parse(jsonString2))//не повинно поламатися і повернути структуру, у всьому схожу з оригінальним arr або table
+    //console.log(arr)
 
     function stringify(obj){
+        let isArray = false
         let result = "{"
         let endRsult = "}"
+        if(Array.isArray(obj)){
+            result = "["
+            endRsult = "]"
+            isArray = true
+        }
         for (const [key, value] of Object.entries(obj)){
             if(typeof(value) === "object" && value !== null){
-                result += `"${key}":` + stringify(value)
+                if (isArray) {
+                    result += stringify(value)
+                } else {
+                    result += `"${key}":` + stringify(value)    
+                }                
                 if(!(key === Object.entries(obj)[Object.entries(obj).length -1][0])){
                     result += ","
                 }
             }else{
-                result += `"${key}":"${value}"`
+                if(typeof(value) === "number" || typeof(value) === "boolean" || value === null){
+                    if(isArray){
+                        result += ` ${value}`
+                    }else{
+                        result += `"${key}" : ${value}`
+                    }                    
+                }else if(value === undefined){
+                    if(isArray){
+                        result +=  `null`
+                    }else{
+                        result += ``
+                        continue
+                    }  
+                }else{
+                    if (isArray){
+                        result += ` "${value}"`
+                    } else {
+                        result += `"${key}" : "${value}"`    
+                    }                    
+                }                
                 if(!(key === Object.entries(obj)[Object.entries(obj).length -1][0])){
                     result += ","
                 }
             }         
         }
         result += endRsult
-        console.log(result)
-        return result        
+        //console.log(result)
+        return result
     }
 }
 
@@ -417,23 +421,22 @@
         try{
             walker(idToFind)
         }catch(notError){
-            console.log("Елемент з ID " + idToFind + " Знайшовся!\nШлях до елементу:\n" + notError)
-            alert("Елемент з ID " + idToFind + " Знайшовся!\nШлях до елементу:\n" + notError)
+            return notError
         }
     }
 
-    function walker(idToFind, parent=document.body, way=parent.tagName){
-        let myWay = way
+    function walker(idToFind, parent=document.body){
         for (const child of parent.children){
-            if(idToFind === child.id){                
-                throw /*child.tagName + " _|_ " + child.id + " _|_ " +*/ way
+            if(idToFind === child.id){
+                throw child
             }else{
-                walker(idToFind, child, myWay + " => " + child.tagName) //вкладений виклик - вкладений рівень вкладеності :-D
-            }           
+                walker(idToFind, child)
+            }
         }
     }
-    getElementById("root")
-    getElementById("h2-11")
-    getElementById("h3-10_0")
-    getElementById("h2-11_2")
+    console.log(getElementById("root"))
+    console.log(getElementById("h2-11"))    
+    console.log(getElementById("h2-11_2"))
+    let djk = getElementById("h3-10_0")
+    djk.style.backgroundColor = "red"
 }
