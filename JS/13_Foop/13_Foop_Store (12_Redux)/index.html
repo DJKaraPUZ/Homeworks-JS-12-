@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>РОЗОРИ ЛАРЬОК!</title>
+</head>
+<body>    
+    <div class="main-div">
+        <div id="voinBD">
+            <div>
+                Торгівля не пішла та і я завжди відчував, <br>
+                що бізнес - не моє
+            </div>
+            <div>
+                Тепер я в ЗСУ <br>
+                Слава Україні!
+            </div>
+        </div>
+        <div id="deputatBD">
+            <div>
+                Всєгда ащущал в сєбє сілі, <br>
+                а главноє - жєланіє пісать закони для окружающіх
+            </div>
+            <div>
+                Я прінял рєшєніє<br>
+                Я ІДУ В ДЄПУТАТІ!
+            </div>
+
+        </div>
+        <div class="gamefild-div">
+            <div class="field">
+                <div id="money">
+                    $100500
+                </div>
+                <div class="shop">
+                    <img src="img/ico_beer.png" class="product-ico" alt="ПИВО">
+                    <div>x100 </div>
+                    <img src="img/ico_henn.png" class="product-ico" alt="БУХЛО">
+                    <div>x100 </div>
+                    <img src="img/ico_marl.png" class="product-ico" alt="СИГАРЕТИ">
+                    <div>x100 </div>
+                </div>
+            </div>
+
+            <div class="price-container">
+                <div class="one-price-container">
+                    <img src="img/prod_beer.png" class="product-img" alt="ПИВО">
+                    <div class="price" id="beerPriceOutput">
+                        1
+                    </div>
+                </div>
+                <div class="one-price-container">
+                    <img src="img/prod_henn.png" class="product-img" alt="БУХЛО">
+                    <div class="price" id="hennPriceOutput">
+                        55
+                    </div>
+                </div>
+                <div class="one-price-container">
+                    <img src="img/prod_marl.png" class="product-img" alt="СИГАРЕТИ">
+                    <div class="price" id="marlPriceOutput">
+                        100
+                    </div>
+                </div>
+            </div>
+            <div class="beer-store" id="beerStore">
+                <img src="img/box_beer.png" id="beerBox1" class="box-beer" alt="Ящик пива">
+                <img src="img/box_beer.png" id="beerBox2" class="box-beer" alt="Ящик пива">
+                <img src="img/box_beer.png" id="beerBox3" class="box-beer" alt="Ящик пива">
+                <img src="img/box_beer.png" id="beerBox4" class="box-beer" alt="Ящик пива">
+                <img src="img/box_beer.png" id="beerBox5" class="box-beer" alt="Ящик пива">
+            </div>
+            <div id="marlStore">
+                <img src="img/box_marl.PNG" id="marlBox0" class="box-marl" alt="Блок сигарет">
+                <img src="img/box_marl.PNG" id="marlBox1" class="box-marl" alt="Блок сигарет">
+                <img src="img/box_marl.PNG" id="marlBox2" class="box-marl" alt="Блок сигарет">
+                <img src="img/box_marl.PNG" id="marlBox3" class="box-marl" alt="Блок сигарет">
+                <img src="img/box_marl.PNG" id="marlBox4" class="box-marl" alt="Блок сигарет">
+                <img src="img/box_marl.PNG" id="marlBox5" class="box-marl" alt="Блок сигарет">
+                <img src="img/box_marl.PNG" id="marlBox6" class="box-marl" alt="Блок сигарет">
+                <img src="img/box_marl.PNG" id="marlBox7" class="box-marl" alt="Блок сигарет">
+                <img src="img/box_marl.PNG" id="marlBox8" class="box-marl" alt="Блок сигарет">
+                <img src="img/box_marl.PNG" id="marlBox9" class="box-marl" alt="Блок сигарет">
+
+            </div>
+
+            <img src="img/stall_1.png" class="stall" alt="Ларьок">
+            <img src="img/car_0.png" id="car" alt="Залізний кінь">
+            <img src="img/Doba.png" class="doba" alt="Просто цена па-дебильному написана">
+            <img src="img/truck.png" id="truck" alt="Не лєвак!!!">
+            <img src="img/boombox.png" id="boombox" alt="ПАНАСОНІК">
+            <div id="qr">
+                <p>ТЄБЄ НІКТО ДЄНЄГ НЄ ДАСТ!</p>
+            </div>
+
+            <div class="field bottom-field">
+                <div style="display: flex; align-items: center; font-size: 5vmin; margin-left: 1vmin;">Я</div>
+                <input type="number" id="prodAmount">
+                <input type="text" id="prodType">
+                <div id="button-holder">
+                    <button>Піво</button>
+                    <button>Бухло</button>
+                    <button>Cіги</button>
+                </div>
+                <button id="buyButton">ХОЧУ!</button>
+                
+                <div class="my-money">
+                    <div>Гривні сюди:</div>
+                    <input type="number" id="myMoney">
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+    <audio src="img/333.mp3" id="audio"></audio>
+    <script src="Less_12 Redux.js"></script>    
+</body>
+</html>
