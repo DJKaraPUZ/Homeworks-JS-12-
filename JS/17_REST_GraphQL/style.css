@@ -1,0 +1,89 @@
+.main-div{
+    display: flex;
+    justify-items: center;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 95vw;
+    min-height: 95vh;
+    background-color: black;
+}
+
+.myDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: darkgray;    
+    min-width: 41vmin;
+    min-height: 41vmin;    
+}
+
+.Lighter{
+    position: absolute;
+    max-width: 41vmin;
+    max-height: 41vmin;
+}
+
+.redColorDiv{
+    min-height: 12vmin;
+    min-width: 13vmin;
+    background-color: rgb(85, 40, 40);
+}
+
+.yellowColorDiv{
+    min-height: 12vmin;
+    min-width: 13vmin;
+    background-color: rgb(102, 102, 54);
+}
+
+.greenColorDiv{
+    min-height: 12vmin;
+    min-width: 13vmin;
+    background-color: rgb(56, 85, 56);
+}
+
+.PedestrianLighter{    
+    position: absolute;
+    max-width: 41vmin;
+    max-height: 41vmin;
+}
+
+#pedestrianTrafficLight .redColorDiv{
+    min-height: 18vmin;
+    min-width: 18vmin;
+    background-color: rgb(85, 40, 40);
+}
+
+#pedestrianTrafficLight .greenColorDiv{
+    min-height: 18vmin;
+    min-width: 18vmin;
+    background-color: rgb(56, 85, 56);
+}
+
+#pedestrianTrafficLightWithButton .redColorDiv{
+    min-height: 18vmin;
+    min-width: 18vmin;
+    background-color: rgb(85, 40, 40);
+}
+
+#pedestrianTrafficLightWithButton .greenColorDiv{
+    min-height: 18vmin;
+    min-width: 18vmin;
+    background-color: rgb(56, 85, 56);
+}
+
+#speedButton{
+    position: absolute;
+    min-height: 8vmin;
+    min-width: 16vmin;
+    border: solid 2px red;
+    border-radius: 2vmin;
+    background-image: url(img/NFS.png);
+    background-size: contain;
+    background-color: rgb(0, 0, 0);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -10vmin;
+    z-index: 5;
+}
