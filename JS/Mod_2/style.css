@@ -1,0 +1,237 @@
+body{
+    background-color: white;
+}
+
+#mainContainer {
+    display: flex;
+}
+
+/*header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    min-height: 110px;
+    background-color: #AAA;
+}
+
+
+#cartIcon{
+    position: relative;
+    padding: 5px 0 0 15px;
+    max-height: 100px;
+    max-width: 160px;
+}
+
+#cartIcon img{
+    max-height: 100px;
+}
+
+#cartIconCounter{    
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background-color: green;
+    left: 105px;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#loginBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2vmin;
+}
+
+#loginBar button{
+    width: 100%;
+    margin-bottom: 1vmin;
+}
+/*header END*/
+
+/*main*/
+#main{
+    display: flex;    
+    flex-direction: column;
+    align-items: center;    
+    min-width: 300px;
+    width: 69%;
+}
+
+#main a{
+    text-decoration: none;
+}
+
+#main a img{
+    max-width: 32vmin;
+}
+
+#main h1{
+    text-align: center;
+}
+
+#main h2{
+    text-align: center;
+}
+
+.goodTable{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.goodTable img{
+    max-width: 70%;
+}
+
+.goodTable h1{
+    max-width: 70%;
+}
+
+.goodDescription{
+    max-width: 60%;
+    padding: 2vmin;
+    font-size: 2vmin;
+    border: 1px #AAA solid;
+    background-color: #dddddd49
+}
+
+.goodCategoryViewer{
+    font-size: 3vmin;
+
+}
+
+.priceAndButton{
+    margin: 2vmin 0 4vmin;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px #AAA solid;
+    background-color: #dddddd49
+}
+
+.goodsDiv{    
+    display: flex;
+    margin: 1vmin 1vmin;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.goods2Div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 1vmin;
+}
+
+.goods2Div a{
+    font-size: 2.5vmin;
+}
+
+.spanPrice{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vmin;
+    font-weight: bolder;
+    margin: 2vmin 0 2vmin 2vmin;
+}
+/*main END*/
+
+/*aside*/
+#aside {
+    min-width: 180px;
+    width: 29%;
+    text-align: center;
+    margin-right: 3px;
+}
+
+#aside > a{
+    color : #3e77aa;
+    display: block;
+    margin-top: 2vmin;
+    text-decoration: none;
+    font-size: 3vmin;
+    border: 1px rgba(0, 0, 0, 0) solid;   
+}
+
+#aside > a:hover{
+    display: block;
+    margin-top: 2vmin;
+    text-decoration: none;
+    font-size: 3vmin;
+    border: 1px solid red;
+    color: red;
+    background-color: rgba(128, 128, 128, 0.11);
+}
+/*aside END*/
+
+/*Cart*/
+.goodInbox{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    background-color: #aaaaaa7c;
+    border-radius: 2vmin;
+    margin: 1vmin;
+    padding: 1vmin;
+    border: 2px solid #AAA;
+}
+
+.orderInHistory{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 98%;
+    background-color: #aaaaaa7c;
+    border-radius: 1.4vmin;
+    margin: 0.7vmin;
+    padding: 0.7vmin;
+    border: 2px solid #AAA;
+}
+
+.goodInHistory{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 95%;
+    background-color: #aaaaaa7c;
+    border-radius: 1.4vmin;
+    margin: 0.7vmin;
+    padding: 0.7vmin;
+    border: 2px solid #AAA;
+}
+
+.goodInbox img{
+    max-width: 16vmin;
+    margin-right: 1vmin;
+}
+
+.goodInbox :nth-child(2){
+    width: 100%;
+}
+
+.goodInbox div:last-child{
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-around;
+}
+
+.goodInboxEndDiv{
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.finalCostSpan{
+    font-size: 3.5vmin;
+    margin: 1vmin 0 2vmin;
+}
+/*Cart END*/
