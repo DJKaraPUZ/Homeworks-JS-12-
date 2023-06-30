@@ -1,10 +1,11 @@
 /*makeProfileTimer ====  Напишіть функцію makeProfileTimer, яка служить для виміру часу виконання іншого коду і працює наступним чином:
                             Використовуйте performance.now() для того, щоб запам'ятати момент часу. Ця функцiя повертає час у 
                             мiлiсекундах вiд моменту завантаження сторiнки.*/
-{    
-    function makeProfileTimer(x = performance.now()){
-        function f (y = performance.now()){
-            return y - x 
+{
+    function makeProfileTimer(){
+        const x = performance.now()
+        function f (){
+            return performance.now() - x
         }
         return f
     }
@@ -26,20 +27,20 @@
                     якихось причин значення не знадобиться, то Math.random навіть не буде викликано*/
 {
     let saver = makeSaver(Math.random) //створює функцію-сховище результату переданої як параметр функції (Math.random 
-                                      // у прикладі). На цьому етапі Math.random НЕ ВИКЛИКАЄТЬСЯ
+                                       // у прикладі). На цьому етапі Math.random НЕ ВИКЛИКАЄТЬСЯ
     let value1 = saver() //saver викликає передану в makeSaver функцію, запам'ятовує результат і повертає його
     let value2 = saver() //saver надалі просто зберігає результат функції, і більше НЕ викликає передану в makeSaver функцію;
-
+    
     alert(`Random: ${value1} === ${value2}`)
 
-    function makeSaver(f){
-        let savedValue = f()
-        return function(f){
-            if(savedValue === undefined){
-                savedValue = f()
-            }else{
-                return savedValue
-            }            
+    function makeSaver(fun){
+        let savedValue = {}
+        const f = fun
+        return function(){
+            if(!Object.entries(savedValue).length){
+                savedValue.result = f()
+            }
+            return savedValue.result
         }
     }
 
@@ -128,8 +129,8 @@
     function checkResult(original, validator){
         function wrapper(...params){            
             while(true){
-                const djk = validator(original(params))
-                if(djk){
+                const djk = original(params)
+                if(validator(djk)){
                     return djk
                 }else{
                     continue
