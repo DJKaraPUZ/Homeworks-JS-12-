@@ -44,8 +44,8 @@ body{
 }
 
 .card{
-    min-height: 32vmin;
-    min-width: 24vmin;    
+    min-height: 28vmin;
+    min-width: 21vmin;    
     background-image: url(img/001/Cover001m.jpg);
     background-repeat: no-repeat;
     background-size: contain;
