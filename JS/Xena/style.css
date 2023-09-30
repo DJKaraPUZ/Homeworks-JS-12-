@@ -1,0 +1,57 @@
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vmin;
+    min-width: 95vmin;
+}
+
+#check1{
+    font-size: 2.4vmin;
+}
+
+#boombox{
+    min-height: 2.4vmin;
+}
+
+#playHead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 3vmin;
+    width: 100%;
+    background-color: dimgrey;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#playBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.playRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.card{
+    min-height: 32vmin;
+    min-width: 24vmin;    
+    background-image: url(img/001/Cover001m.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: solid rgba(255, 0, 0, 0.192) 1px;
+}
+
+.card:hover{
+    border: solid red 1px;
+}
