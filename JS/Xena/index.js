@@ -5,6 +5,9 @@ const stateMass = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]
 let currentNum = 0
 let lastNum = 0
 let lastCard
+const freezeTime = 700
+let isItFreeze = false
+let isMusicOn = true
 
 function getRandomState(stateMass){
     let djk = Math.floor(12 * Math.random())
@@ -78,8 +81,9 @@ function reducer(state, {type, cardRow, cardLine}){
     }
     
     if (type === 'OPENCARD'){
+        if(isItFreeze)
+            return
         if(state.isItFirstCard){//перша карта
-            //console.log(cardRow, "+", cardLine)
             return{
                 ...state,
                 [massHide]: massHide[cardRow][cardLine] = 1,
@@ -88,21 +92,22 @@ function reducer(state, {type, cardRow, cardLine}){
                 move : state.move + 1 
             }
         }else{//НЕ перша карта
+            isItFreeze = true
             if(mass[cardRow][cardLine] === mass[state.lastCard.cardRow][state.lastCard.cardLine]){//Вгадала
+                isItFreeze = false
                 return{
                     ...state,
                     [massHide]: massHide[cardRow][cardLine] = 1,
                     isItFirstCard : true,
-                    lastCard : false,
-                    move : state.move + 1
+                    lastCard : false
                 }
-            }else{//НЕ Вгадала
+            }else{//НЕ Вгадала         
                 setTimeout(() => {
                     store.dispatch({type: 'CLOSECARD', cardRow : cardRow, cardLine : cardLine})
-                }, 400 )
+                }, freezeTime )
                 setTimeout(() => {
                     store.dispatch({type: 'CLOSECARD', cardRow : state.lastCard.cardRow, cardLine : state.lastCard.cardLine})
-                }, 400 )
+                }, freezeTime )
                 return{
                     ...state,
                     [massHide]: massHide[cardRow][cardLine] = 1,
@@ -112,6 +117,7 @@ function reducer(state, {type, cardRow, cardLine}){
             }            
         }       
     }else if(type === 'CLOSECARD'){
+        isItFreeze = false
         return{
             ...state,
             isItFirstCard : true,
@@ -127,10 +133,11 @@ const store = createStore(reducer)
 
 store.subscribe(updateAll)
 console.log(store.getState())
+
 //REDUX block END
 
 function updateAll(){
-    if(audio.paused)
+    if(audio.paused && isMusicOn)
         audio.play()
     const djk = store.getState()
     console.log(djk)
@@ -150,42 +157,54 @@ function updateAll(){
 }
 
 card00.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 0, cardLine : 0})
 }
 card01.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 0, cardLine : 1})
 }
 card02.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 0, cardLine : 2})
 }
 card03.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 0, cardLine : 3})
 }
 
 
 card10.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 1, cardLine : 0})
 }
 card11.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 1, cardLine : 1})
 }
 card12.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 1, cardLine : 2})
 }
 card13.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 1, cardLine : 3})
 }
 
 card20.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 2, cardLine : 0})
 }
 card21.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 2, cardLine : 1})
 }
 card22.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 2, cardLine : 2})
 }
 card23.onclick = () => {
+    if(!isItFreeze)
     store.dispatch({type: 'OPENCARD', cardRow : 2, cardLine : 3})
 }
 
@@ -194,8 +213,9 @@ card23.onclick = () => {
 let audio = document.getElementById("audio")
 let boombox = document.getElementById("boombox")
 
-boombox.onclick = function(){    
-    if(audio.paused){
+boombox.onclick = function(){
+    isMusicOn = !isMusicOn
+    if(audio.paused && !isMusicOn){
         audio.play();
     }else{
         audio.pause();

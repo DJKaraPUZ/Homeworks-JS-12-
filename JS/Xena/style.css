@@ -10,17 +10,21 @@ body{
 
 #check1{
     font-size: 2.4vmin;
+    font-weight: bolder;
 }
 
 #boombox{
     min-height: 2.4vmin;
+    font-size: 1.8vmin;
+    font-weight: bolder;
 }
 
 #playHead{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    min-height: 3vmin;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 3.5vmin;
     width: 100%;
     background-color: dimgrey;
 }
