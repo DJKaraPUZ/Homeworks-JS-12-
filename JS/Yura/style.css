@@ -53,9 +53,25 @@ body{
     background-image: url(img/001/Cover001m.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
     border: solid rgba(255, 0, 0, 0.192) 1px;
 }
 
-.card:hover{
+/*.card:hover{
     border: solid red 1px;
+}*/
+
+#DN{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 99vmin;
+    min-height: 99vmin;
+    background-color: black;
+    background-image: url(img/001/DN.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 20;
 }

@@ -141,7 +141,7 @@ function updateAll(){
         audio.play()
     const djk = store.getState()
     console.log(djk)
-    for(let d = 0; d < djk.mass.length; d++){        
+    for(let d = 0; d < djk.mass.length; d++){
         for(let j = 0; j < djk.mass[d].length; j++){
             let cadrName = "card" + d + j
             if(djk.massHide[d][j]){
@@ -154,6 +154,25 @@ function updateAll(){
         }
     }
     check1.innerText = " Ходів зроблено: " + djk.move
+
+    let doneCounter = 0
+
+    for(let d = 0; d < djk.massHide.length; d++){        
+        for(let j = 0; j < djk.mass[d].length; j++){
+            doneCounter = doneCounter + djk.massHide[d][j]
+        }
+    }
+
+    console.log("doneCounter")
+    console.log(doneCounter)
+
+    if(doneCounter === 12){
+        setTimeout(() => {
+            DN.style.display = "flex"
+        }, 1500 )        
+    }
+    
+
 }
 
 card00.onclick = () => {
