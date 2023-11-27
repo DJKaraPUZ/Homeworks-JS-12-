@@ -91,7 +91,7 @@ function reducer(state, {type, cardRow, cardLine}){
                 move : state.move + 1 
             }
         }else{//НЕ перша карта
-            isItFreeze = true
+            isItFreeze = true                
             if(mass[cardRow][cardLine] === mass[state.lastCard.cardRow][state.lastCard.cardLine]){//Вгадала
                 isItFreeze = false
                 return{
@@ -114,7 +114,7 @@ function reducer(state, {type, cardRow, cardLine}){
                     lastCard : {cardRow, cardLine}
                 }
             }            
-        }       
+        }
     }else if(type === 'CLOSECARD'){
         isItFreeze = false
         return{
@@ -135,7 +135,7 @@ console.log(store.getState())
 
 //REDUX block END
 
-function updateAll(){
+function updateAll(){    
     if(audio.paused && isMusicOn)
         audio.play()
     const djk = store.getState()
@@ -173,54 +173,174 @@ function updateAll(){
 }
 
 card00.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 0, cardLine : 0})
+    let myRow = 0
+    let myLine = 0
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 card01.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 0, cardLine : 1})
+    let myRow = 0
+    let myLine = 1
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 card02.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 0, cardLine : 2})
+    let myRow = 0
+    let myLine = 2
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 card03.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 0, cardLine : 3})
+    let myRow = 0
+    let myLine = 3
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 
 card10.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 1, cardLine : 0})
+    let myRow = 1
+    let myLine = 0
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 card11.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 1, cardLine : 1})
+    let myRow = 1
+    let myLine = 1
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 card12.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 1, cardLine : 2})
+    let myRow = 1
+    let myLine = 2
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 card13.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 1, cardLine : 3})
+    let myRow = 1
+    let myLine = 3
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 
 card20.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 2, cardLine : 0})
+    let myRow = 2
+    let myLine = 0
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 card21.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 2, cardLine : 1})
+    let myRow = 2
+    let myLine = 1
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 card22.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 2, cardLine : 2})
+    let myRow = 2
+    let myLine = 2
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 card23.onclick = () => {
-    if(!isItFreeze)
-    store.dispatch({type: 'OPENCARD', cardRow : 2, cardLine : 3})
+    let myRow = 2
+    let myLine = 3
+    let n = store.getState()
+    if(!isItFreeze){
+        let nn = n.massHide[myRow]
+        let x = nn[myLine]
+        if(x){
+            return
+        }else{
+            store.dispatch({type: 'OPENCARD', cardRow : myRow, cardLine : myLine})
+        }
+    }
 }
 
 
